@@ -14,13 +14,13 @@ const Main = () => {
     <main>
       <Switch>
           <Route exact path='/'><Home /></Route>
-          <Route exact path='/gallery'><Gallery /></Route>
-          <Route exact path='/gallery/:id' render ={(routeProps) => <ApartmentDetails {...routeProps} />} /> 
-          <Route exact path='/about-us'><AboutUs /></Route>
-          <Route exact path='/prices-and-availability'><Booking /></Route>
+          <Route exact path='/gallerie'><Gallery /></Route>
+          <Route exact path='/gallerie/:id' render ={(routeProps) => <ApartmentDetails {...routeProps} />} /> 
+          <Route exact path='/a-propos'><AboutUs /></Route>
+          <Route exact path='/tarifs'><Booking /></Route>
           <Route exact path='/contact'><Contact /></Route>
-          <Route exact path='/legal-notice'><LegalNotice /></Route>
-          <Route exact path='/CGU'><TermOfService /></Route>
+          <Route exact path='/mentions-legales'><LegalNotice /></Route>
+          <Route exact path='/cgu'><TermOfService /></Route>
       </Switch>
     </main>
   )
