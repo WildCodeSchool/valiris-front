@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useState }from 'react';
 import { useTranslation } from 'react-i18next';
+import Switch from '@material-ui/core/Switch';
 
 const LanguageSelector = () => {
+
+  const [toggled, setToggled] = useState(true);
   const { t, i18n } = useTranslation()
 
   const changeLanguage = (event) => {
-    i18n.changeLanguage(event.target.value)
+    setToggled(!toggled)
+    if(event.target.checked){
+      i18n.changeLanguage('fr')
+    } else {
+      i18n.changeLanguage('en')
+    }
   }
 
   return (
-    <div onChange={changeLanguage}>
-      <input type="radio" value="en" name="language" defaultChecked /> English
-      <input type="radio" value="fr" name="language"/> Français
-    </div>
+  <Switch size="small" checked={toggled} color="primary" onChange={changeLanguage} />
   )
 }
 
