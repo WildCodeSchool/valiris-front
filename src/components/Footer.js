@@ -12,7 +12,7 @@ const Footer = () => {
           <li><NavLink to='/CGU' className='footer-link-item'>Conditions Générales d'Utilisation</NavLink></li>
         </ul>
       </nav>
-      <img src={logo} alt='logo-valiris' className='logo-footer' />
+      <a href='/'><img src={logo} alt='logo-valiris' className='logo-footer' /></a>
     </footer>
   );
 };
