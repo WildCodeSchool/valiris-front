@@ -6,13 +6,15 @@ import '../styles/footer.css';
 const Footer = () => {
   return (
     <footer>
-      <nav>
-        <ul className='nav-footer'>
+      <nav className='nav-footer'>
+        <ul className='menu-footer'>
           <li><NavLink to='/legal-notice' className='footer-link-item'>Mentions Légales</NavLink></li>
           <li><NavLink to='/CGU' className='footer-link-item'>Conditions Générales d'Utilisation</NavLink></li>
         </ul>
+        <div className='logo-footer'>
+          <NavLink to='/'><img src={logo} alt='logo-valiris' /></NavLink>
+        </div>
       </nav>
-      <a href='/'><img src={logo} alt='logo-valiris' className='logo-footer' /></a>
     </footer>
   );
 };
