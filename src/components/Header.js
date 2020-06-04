@@ -9,11 +9,11 @@ const Header = () => {
 
   const openBurgerMenu = () => {
     setOpenBurger(true);
-  }
+  };
 
   const closeBurgerMenu = () => {
     setOpenBurger(false);
-  }
+  };
 
   return (
     <header className='header'>
@@ -22,7 +22,7 @@ const Header = () => {
         <LanguageSelector />
         <Navbar handleOpen={openBurgerMenu} handleClose={closeBurgerMenu} show={openBurger} />
       </div>
-    </header >
+    </header>
   );
 };
 

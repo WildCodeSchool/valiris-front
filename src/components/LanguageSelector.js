@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Switch from '@material-ui/core/Switch';
-import '../styles/language-selector.css'
+import '../styles/language-selector.css';
 
 const LanguageSelector = () => {
   const [toggled, setToggled] = useState(true);

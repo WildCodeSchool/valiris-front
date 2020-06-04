@@ -68,7 +68,4 @@
       display: flex;
       list-style: none;
     }
-    .desktop-menu ul li {
-        width: 150px;
-    }
 }
