@@ -8,11 +8,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   margin-right: 2em;
 }
 
 .logo-header {
   height: 100px;
   margin: 20px;
+}
+
+@media screen and (min-width: 800px) {
+  .right-header-container {
+    justify-content: space-evenly;
+  }
 }

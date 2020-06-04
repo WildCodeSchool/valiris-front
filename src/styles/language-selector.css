@@ -3,6 +3,10 @@
   align-items: center;
 }
 
+.toggle-container p {
+  color: #f7f1e9ff
+}
+
 @media screen and (min-width: 640px) {
   .toggle-container {
     align-self: flex-end;
