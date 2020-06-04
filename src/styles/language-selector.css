@@ -1,0 +1,14 @@
+.toggle-container {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-container p {
+  color: #f7f1e9ff
+}
+
+@media screen and (min-width: 850px) {
+  .toggle-container {
+    align-self: flex-end;
+  }
+}

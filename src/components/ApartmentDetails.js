@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const ApartmentDetails = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <div />
+  );
+};
 
-export default ApartmentDetails
+export default ApartmentDetails;

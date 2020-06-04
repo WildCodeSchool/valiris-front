@@ -5,16 +5,14 @@ import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
-import LanguageSelector from './components/LanguageSelector';
 
-function App() {
+function App () {
   return (
     <Router>
       <Suspense fallback={null}>
         <div className='App'>
           <Header />
           <Main />
-          <LanguageSelector />
           <Footer />
         </div>
       </Suspense>

@@ -1,0 +1,76 @@
+.aboutus-container {
+    background: #F5F5DC;
+}
+
+.first-article-aboutus, 
+.second-article-aboutus {
+    padding: 20px;
+}
+
+.aboutus-container h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #329797;
+}
+
+.first-article-aboutus > div:nth-child(3) > p {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+    line-height: 1.6em;
+}
+
+.div-about > p {
+    width: 60%;
+    text-align: center;
+    line-height: 1.6em;
+    align-self: center;
+}
+
+.aboutus-image-container,
+.div-about {
+    display: flex;
+    justify-content: space-around;
+}
+
+.aboutus-image {
+    width: 30%;
+    height: 30%;
+    align-self: center;
+    min-width: 250px;
+    border-radius: 2px;
+    box-shadow: 3px 2px 2px #329797;
+}
+
+@media screen and (max-width: 850px) {
+    .aboutus-image-container {
+        flex-wrap: wrap;
+    }
+
+    .aboutus-image {
+        margin: 20px;
+    }
+
+    .div-about {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .first-article-aboutus > div:nth-child(3) > p {
+        font-size: 12px;
+    }
+
+    .div-about > p {
+        width: 90%;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .first-article-aboutus > div:nth-child(3) > p,
+    .div-about > p {
+        font-size: 10px;
+    }
+
+}
