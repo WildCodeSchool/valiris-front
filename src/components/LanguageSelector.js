@@ -5,7 +5,7 @@ import Switch from '@material-ui/core/Switch';
 const LanguageSelector = () => {
 
   const [toggled, setToggled] = useState(true);
-  const { t, i18n } = useTranslation()
+  const { i18n } = useTranslation()
 
   const changeLanguage = (event) => {
     setToggled(!toggled)
