@@ -10,17 +10,27 @@
     "i18next": "^19.4.5",
     "i18next-xhr-backend": "^3.2.2",
     "react": "^16.13.1",
+    "react-burger-menu": "^2.6.14",
     "react-dom": "^16.13.1",
     "react-i18next": "^11.5.0",
     "react-intl": "^4.6.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "semistandard": {
+    "parser": "babel-eslint"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "semistandard --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,5 +46,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "semistandard": "^14.2.0"
   }
 }

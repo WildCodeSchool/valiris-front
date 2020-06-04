@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const ToggleLanguage = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <div />
+  );
+};
 
 export default ToggleLanguage;

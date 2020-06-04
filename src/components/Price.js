@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const Price = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <div />
+  );
+};
 
 export default Price;

@@ -1,6 +1,5 @@
 {
   "hello.label": "Bonjour",
   "thankyou.label": "Merci",
-  "accueil.label":"Acceuil"
-
+  "home.label": "Acceuil"
 }
