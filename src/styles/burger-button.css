@@ -24,7 +24,7 @@
     background: #f7f1e9ff;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 850px) {
   .toggle-button{
     display: none;
   }

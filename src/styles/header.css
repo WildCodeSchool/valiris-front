@@ -16,7 +16,7 @@
   margin: 20px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 850px) {
   .right-header-container {
     justify-content: space-evenly;
   }
