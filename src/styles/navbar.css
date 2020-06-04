@@ -51,6 +51,7 @@
 
 /*/////////////// CONTACT BUTTON ////////////////////*/
 .contact-button {
+  cursor: pointer;
   font-size: 24px;
   border-radius: 5px; 
   text-decoration: none;
@@ -113,6 +114,7 @@
       padding: 4px 0; 
     }
     .contact-button {
+      cursor: pointer;
       font-size: 20px;
       border-radius: 5px; 
       text-decoration: none;
