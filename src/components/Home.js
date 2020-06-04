@@ -2,11 +2,13 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../styles/home.css';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
-
+  const { t } = useTranslation()
   return (
     <div className='caroussel-container'>
+      <h1>{t("page-home-h1.label")}</h1>
       <Carousel 
         autoPlay 
         showArrows 

@@ -1,11 +1,13 @@
 import React from 'react';
 import '../styles/aboutus.css';
+import { useTranslation } from 'react-i18next';
 
 const AboutUs = () => {
+  const { t, i18n } = useTranslation()
   return (
     <div className='page-a-propos'>
       <div className='container-qui-sommes-nous'>
-        <h2>Qui sommes-nous?</h2>
+        <h1>{t("page-about-h1.label")}</h1>
         <div className='div-qui-sommes-nous'>
           <img className='img-a-propos' alt='img-1' src={require('../images/maison_photo1.jpg')} />
           <img className='img-a-propos' alt='img-2' src={require('../images/maison_photo2.jpg')} />
@@ -16,7 +18,6 @@ const AboutUs = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque ac nisl in fermentum. Duis imperdiet enim non mauris accumsan, vitae placerat eros pulvinar. Proin est ipsum, mattis a malesuada feugiat, ornare vel leo. Cras nulla quam, eleifend vulputate velit sit amet, volutpat ultrices lorem. Etiam rhoncus iaculis lacus, at tristique erat luctus vitae. Sed nec augue ipsum. Pellentesque nec dolor tincidunt, consectetur diam id, pellentesque risus. Etiam viverra orci volutpat, fringilla arcu sed, facilisis ante. Donec iaculis commodo dignissim. Fusce vitae tempus est. Donec tincidunt, dui in congue rhoncus, velit sapien suscipit leo, nec pulvinar lacus metus nec arcu. Nunc posuere mi vel sapien mollis, in congue lacus molestie. Proin vitae lectus sed dui luctus finibus non ac urna. Ut vitae lectus eu nunc euismod ullamcorper. Donec sit amet lectus tempor, consequat felis elementum, gravida justo. Cras tincidunt ultrices blandit.
             <br />
             Suspendisse vel sem sed lorem congue bibendum. Mauris finibus metus eu risus sodales condimentum. Ut lobortis leo ante, quis porta nunc feugiat sed. Maecenas elit quam, venenatis quis pulvinar ac, convallis quis diam. Sed tincidunt orci ex, semper pretium enim eleifend vel. Integer nec sapien enim. Pellentesque dapibus dolor est, vel bibendum mauris finibus vel.
-
             Vivamus at sollicitudin leo. Phasellus vel dolor suscipit, scelerisque dolor ullamcorper, volutpat leo. Nullam scelerisque fermentum metus ut posuere. Proin placerat enim eget tempor dignissim. Vivamus feugiat diam ac hendrerit lobortis. Nam egestas vehicula viverra. Nulla ultricies magna sed finibus fringilla.
           </p>
         </div>

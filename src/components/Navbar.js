@@ -2,8 +2,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../styles/navbar.css';
 import BurgerButton from './BurgerButton';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = ({ show, handleOpen, handleClose }) => {
+  const { t, i18n } = useTranslation()
   let navClasses = 'nav-menu';
   if (show) {
     navClasses = 'nav-menu open';
@@ -26,10 +28,10 @@ const Navbar = ({ show, handleOpen, handleClose }) => {
       </nav>
       <nav className='desktop-menu'>
         <ul>
-          <li><NavLink className='menu-item-desktop' exact activeClassName='active' to='/'>Accueil</NavLink></li>
-          <li><NavLink className='menu-item-desktop' activeClassName='active' to='/gallerie'>Galerie</NavLink></li>
-          <li><NavLink className='menu-item-desktop' activeClassName='active' to='/a-propos'>Qui sommes-nous</NavLink></li>
-          <li><NavLink className='menu-item-desktop' activeClassName='active' to='/tarifs'>Tarifs et disponibilités</NavLink></li>
+          <li><NavLink className='menu-item-desktop' exact activeClassName='active' to='/'>{t('navigation-home.label')}</NavLink></li>
+          <li><NavLink className='menu-item-desktop' activeClassName='active' to='/gallerie'>{t('navigation-gallery.label')}</NavLink></li>
+          <li><NavLink className='menu-item-desktop' activeClassName='active' to='/a-propos'>{t('navigation-about.label')}</NavLink></li>
+          <li><NavLink className='menu-item-desktop' activeClassName='active' to='/tarifs'>{t('navigation-prices.label')}</NavLink></li>
           <NavLink to='/contact'><button className='contact-button'>Contact</button></NavLink>
         </ul>
       </nav>
