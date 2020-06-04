@@ -6,7 +6,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>{t('accueil.label')}</h1>
+      <h1>{t("page-home-h1.label")}</h1>
     </div>
   )
 }

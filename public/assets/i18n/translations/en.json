@@ -1,5 +1,12 @@
 {
-  "hello.label": "Hello",
-  "thankyou.label": "Thank you",
-  "accueil.label": "Home"
+  "navigation-about.label": "About",
+  "navigation-gallery.label": "Gallery",
+  "navigation-home.label": "Home",
+  "navigation-legal-notice.label": "Legal Notice",
+  "navigation-prices.label": "Prices and availabilities",
+  "navigation-terms.label": "Terms of Service",
+  "page-about-h1.label": "About",
+  "page-gallery-h1.label": "Gallery",
+  "page-home-h1.label": "Home",
+  "page-prices-h1.label": "Prices and availabilities"
 }
