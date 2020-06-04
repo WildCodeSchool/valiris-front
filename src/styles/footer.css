@@ -3,27 +3,50 @@ footer {
     bottom: 0px;
     width: 100%;
     background: #329797;
-    display: flex;
-    height: 120px;
-}
-
-.logo-footer {
-    height: 100px;
-    position: absolute;
-    right: 10px;
-    bottom: 10px
+    padding: 10px;
+    /* display: flex; */
+    /* height: 120px; */
 }
 
 .nav-footer {
   display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-footer img {
+  height: 100px;
+}
+
+.menu-footer {
+  display: flex;
   flex-direction: column;
 }
 
-.nav-footer li {
+.menu-footer li {
   margin: 10px;
+  text-align: center;
 }
 
 .footer-link-item {
     color: #fff;
     text-decoration: none;
+}
+
+@media screen and (min-width: 850px) {
+  .nav-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .menu-footer li {
+    margin: 10px;
+    margin-left: 40px;
+    text-align: left;
+  }
+  .logo-footer {
+    margin-right: 30px;;
+  }
 }
