@@ -1,4 +1,8 @@
-/*//////////////// MENU MOBILE ////////////////////////*/
+/*//////////////// MENU MOBILE ///////////////////////*/
+.desktop-menu {
+  display: none;
+}
+
 .nav-menu {
     display:flex;
     position: fixed;
@@ -43,15 +47,10 @@
     color: #329797;
     font-size: 36px;
 }
-
-/*//////////////// BURGER MENU ////////////////////////*/
 /*////////////////////////////////////////////////////*/
 
-.desktop-menu {
-    display: none;
-}
-
-.contact-button-mobile {
+/*/////////////// CONTACT BUTTON ////////////////////*/
+.contact-button {
   font-size: 24px;
   border-radius: 5px; 
   text-decoration: none;
@@ -63,19 +62,20 @@
   margin-top: 1em;
   transition: box-shadow 0.2s;
 }
-.contact-button-mobile:hover {
+.contact-button:hover {
   color: #329797;
   background-color: #f7f1e9ff;
   border-color: 4px #329797;
   box-shadow: 0px 0px 0px 4px #329797;
 }
 
-.contact-button-mobile:focus {
+.contact-button:focus {
   outline: none;
   border: none;
 }
+/*////////////////////////////////////////////////////*/
 
-
+/*////////////////////////////////////////////////////*/
 @media screen and (min-width: 800px) {
     .mobile-menu {
         display: none;
@@ -112,7 +112,7 @@
       border-bottom: 2px solid;
       padding: 4px 0; 
     }
-    .contact-button-mobile {
+    .contact-button {
       font-size: 20px;
       border-radius: 5px; 
       text-decoration: none;
@@ -124,14 +124,14 @@
       margin: 0;
       transition: box-shadow 0.2s;
     }
-    .contact-button-mobile:hover {
+    .contact-button:hover {
       color: #f7f1e9ff;
       background-color: #329797;  
       border-color: 4px #f7f1e9ff;
       box-shadow: 0px 0px 0px 4px #f7f1e9ff;
     }
     
-    .contact-button-mobile:focus {
+    .contact-button:focus {
       outline: none;
       border: none;
     }

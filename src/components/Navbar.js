@@ -21,7 +21,7 @@ const Navbar = ({ show, handleOpen, handleClose }) => {
           <li><NavLink to='/gallerie'>Galerie</NavLink></li>
           <li><NavLink to='/a-propos'>Qui sommes-nous</NavLink></li>
           <li><NavLink to='/tarifs'>Tarifs et disponibilités</NavLink></li>
-          <NavLink to='/contact'><button className='contact-button-mobile'>Contact</button></NavLink>
+          <NavLink to='/contact'><button className='contact-button'>Contact</button></NavLink>
         </ul>
       </nav>
       <nav className='desktop-menu'>
@@ -30,7 +30,7 @@ const Navbar = ({ show, handleOpen, handleClose }) => {
           <li><NavLink className='menu-item-desktop' activeClassName='active' to='/gallerie'>Galerie</NavLink></li>
           <li><NavLink className='menu-item-desktop' activeClassName='active' to='/a-propos'>Qui sommes-nous</NavLink></li>
           <li><NavLink className='menu-item-desktop' activeClassName='active' to='/tarifs'>Tarifs et disponibilités</NavLink></li>
-          <NavLink to='/contact'><button className='contact-button-mobile'>Contact</button></NavLink>
+          <NavLink to='/contact'><button className='contact-button'>Contact</button></NavLink>
         </ul>
       </nav>
     </>
