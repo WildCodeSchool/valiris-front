@@ -14,7 +14,7 @@ const Footer = () => {
         <div className='logo-footer'>
           <NavLink to='/'><img src={logo} alt='logo-valiris' /></NavLink>
         </div>
-      </nav> 
+      </nav>
     </footer>
   );
 };
