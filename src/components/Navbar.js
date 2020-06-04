@@ -5,7 +5,7 @@ import BurgerButton from './BurgerButton';
 import { useTranslation } from 'react-i18next';
 
 const Navbar = ({ show, handleOpen, handleClose }) => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   let navClasses = 'nav-menu';
   if (show) {
     navClasses = 'nav-menu open';
@@ -19,11 +19,11 @@ const Navbar = ({ show, handleOpen, handleClose }) => {
           <i className='fas fa-times' onClick={handleClose} />
         </div>
         <ul className='menuItems'>
-          <li><NavLink to='/'>Accueil</NavLink></li>
-          <li><NavLink to='/gallerie'>Galerie</NavLink></li>
-          <li><NavLink to='/a-propos'>Qui sommes-nous</NavLink></li>
-          <li><NavLink to='/tarifs'>Tarifs et disponibilités</NavLink></li>
-          <NavLink to='/contact'><button className='contact-button'>Contact</button></NavLink>
+          <li><NavLink onClick={handleClose} to='/'>Accueil</NavLink></li>
+          <li><NavLink onClick={handleClose} to='/gallerie'>Galerie</NavLink></li>
+          <li><NavLink onClick={handleClose} to='/a-propos'>Qui sommes-nous</NavLink></li>
+          <li><NavLink onClick={handleClose} to='/tarifs'>Tarifs et disponibilités</NavLink></li>
+          <NavLink onClick={handleClose} to='/contact'><button className='contact-button'>Contact</button></NavLink>
         </ul>
       </nav>
       <nav className='desktop-menu'>

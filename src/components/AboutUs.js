@@ -3,15 +3,15 @@ import '../styles/aboutus.css';
 import { useTranslation } from 'react-i18next';
 
 const AboutUs = () => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   return (
-    <div className='page-a-propos'>
-      <div className='container-qui-sommes-nous'>
-        <h1>{t("page-about-h1.label")}</h1>
-        <div className='div-qui-sommes-nous'>
-          <img className='img-a-propos' alt='img-1' src={require('../images/maison_photo1.jpg')} />
-          <img className='img-a-propos' alt='img-2' src={require('../images/maison_photo2.jpg')} />
-          <img className='img-a-propos' alt='img-3' src={require('../images/maison_photo3.jpg')} />
+    <section className='aboutus-container'>
+      <article className='first-article-aboutus'>
+        <h2>{t("page-about-h1.label")}</h2>
+        <div className='aboutus-image-container'>
+          <img className='aboutus-image' alt='img-1' src={require('../images/maison_photo1.jpg')} />
+          <img className='aboutus-image' alt='img-2' src={require('../images/maison_photo2.jpg')} />
+          <img className='aboutus-image' alt='img-3' src={require('../images/maison_photo3.jpg')} />
         </div>
         <div>
           <p>
@@ -21,21 +21,21 @@ const AboutUs = () => {
             Vivamus at sollicitudin leo. Phasellus vel dolor suscipit, scelerisque dolor ullamcorper, volutpat leo. Nullam scelerisque fermentum metus ut posuere. Proin placerat enim eget tempor dignissim. Vivamus feugiat diam ac hendrerit lobortis. Nam egestas vehicula viverra. Nulla ultricies magna sed finibus fringilla.
           </p>
         </div>
-      </div>
+      </article>
 
-      <div className='container-a-propos'>
-        <h2>A propos</h2>
-        <div className='div-a-propos'>
-          <img className='img-a-propos' alt='img-4' src={require('../images/village.jpg')} />
+      <article className='second-article-aboutus'>
+        <h2>{t("page-about-h2.label")}</h2>
+        <div className='div-about'>
+          <img className='aboutus-image' alt='img-4' src={require('../images/village.jpg')} />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis id magna interdum tincidunt. Vivamus ac auctor sem. Phasellus odio lectus, varius a ultrices pharetra, fringilla vitae augue. Donec pulvinar, erat ac venenatis tempus, quam purus consequat sapien, at sollicitudin nibh leo non tellus. Phasellus convallis est ac odio viverra, ut accumsan enim auctor. Quisque malesuada at eros ac tristique. Vivamus in ex tempus, euismod diam at, iaculis massa. Donec pellentesque id quam eu feugiat. Curabitur sem purus, condimentum vel augue sed, sodales convallis mauris. Morbi viverra feugiat ligula ac fringilla.
             <br />
             Vestibulum tincidunt vestibulum nisi, eget efficitur nisl placerat ac. Praesent faucibus ante id malesuada imperdiet. Nam condimentum fermentum mi ut convallis. Nam accumsan purus nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum a purus fringilla, venenatis nulla non, rutrum felis. Nulla convallis luctus lectus.
           </p>
         </div>
-      </div>
+      </article>
 
-    </div>
+    </section>
   );
 };
 
