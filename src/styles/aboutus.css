@@ -11,6 +11,7 @@
 .page-a-propos h2 {
     text-align: center;
     margin-bottom: 40px;
+    color: #329797;
 }
 
 .container-qui-sommes-nous > div:nth-child(3) > p {
@@ -38,6 +39,8 @@
     height: 30%;
     align-self: center;
     min-width: 250px;
+    border-radius: 2px;
+    box-shadow: 3px 2px 2px #329797;
 }
 
 @media screen and (max-width: 850px) {
