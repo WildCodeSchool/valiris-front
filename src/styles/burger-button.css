@@ -7,7 +7,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    margin: 35px 35px;
+    margin: 25px 13px;
     padding: 0;
     box-sizing: border-box;
 }
@@ -24,7 +24,7 @@
     background: #99D7F5;
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 800px) {
   .toggle-button{
     display: none;
   }

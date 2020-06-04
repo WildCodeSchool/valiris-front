@@ -1,4 +1,4 @@
-/*//////////////// BURGER MENU ////////////////////////*/
+/*//////////////// MENU MOBILE ////////////////////////*/
 .nav-menu {
     display:flex;
     position: fixed;
@@ -50,13 +50,27 @@
 .desktop-menu {
     display: none;
 }
-.menu-item {
-  color: #fff ;
+
+.contact-button-mobile {
+  border-radius: 5px;
+  background-color: white;  
   text-decoration: none;
+  color: #373737;
+  width: 100px;
+  line-height: 1em;
+  border: none;
+  padding: 0.8em;
+  margin-top: 2em;
+  transition: box-shadow 0.2s;
+}
+.contact-button-mobile:hover, .contact-button:focus, .contact-button:active, .contact-button.active {
+  color: white;
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 0px 1px whitesmoke;
 }
 
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 800px) {
     .mobile-menu {
         display: none;
     }
@@ -76,10 +90,24 @@
     .desktop-menu ul li:last-child {
       padding-right: 0;
     }
+    .menu-item-desktop {
+      color: #fff ;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+    .menu-item-desktop:hover {
+      border-bottom: 2px solid #ffffff;
+      padding: 4px 0; 
+    }
+    .menu-item-desktop.active {
+      border-bottom: 2px solid #ffffff;
+      padding: 4px 0; 
+    }
     .contact-button {
       border-radius: 5px;
       background-color: white;
       text-decoration: none;
+      border: none;
       color: #373737;
       width: 100px;
       line-height: 1em;
@@ -87,9 +115,10 @@
       padding: 0.8em;
       transition: box-shadow 0.2s;
     }
-    .contact-button:hover, .contact-button:focus, .contact-button:active, .button.active {
-      color: white;
+    .contact-button:hover, .contact-button:focus, .contact-button:active, .contact-button.active {
+      color: #373737;
       background-color: whitesmoke;
       box-shadow: 0px 0px 0px 1px whitesmoke;
+      border: none;
     }
 }
