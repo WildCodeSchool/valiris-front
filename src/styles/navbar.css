@@ -109,7 +109,7 @@
       padding: 4px 0; 
     }
     .menu-item-desktop.active {
-      border-bottom: 2px solid #git status;
+      border-bottom: 2px solid;
       padding: 4px 0; 
     }
     .contact-button-mobile {
