@@ -57,7 +57,20 @@
         align-items: center;
     }
 
-    .div-a-propos > p {
-        width: 80%;
+    .container-qui-sommes-nous > div:nth-child(3) > p {
+        font-size: 12px;
     }
+
+    .div-a-propos > p {
+        width: 90%;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container-qui-sommes-nous > div:nth-child(3) > p,
+    .div-a-propos > p {
+        font-size: 8px;
+    }
+
 }
