@@ -5,7 +5,7 @@ import '../styles/footer.css';
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   return (
     <footer>
       <nav className='nav-footer'>
