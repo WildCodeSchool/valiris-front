@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { TextField } from '@material-ui/core';
 import '../styles/contact.css';
 import '../styles/language-selector.css';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios';
 
 const Contact = () => {
@@ -13,12 +12,12 @@ const Contact = () => {
     phone: '',
     email: ''
   });
-  
+
   const [booking, setBooking] = useState({
     message: '',
     startDate: '',
     endDate: ''
-  })
+  });
 
   // createTask = () => {
   //   this.setState({ newTask: { ...this.state.newTask, _submitting: true } });
@@ -47,19 +46,22 @@ const Contact = () => {
     axios.post('http://localhost:3000/contacts', contact)
       .then(res => res.data)
       .then(data => console.log(data));
-      
+
+    axios.post('http://localhost:3000/messages', {content: booking.message})
+    .then(res => res.data)
+    .then(data => console.log(data));
   };
 
   const getFullDate = () => {
     const day = new Date().getDate();
-    let month = new Date().getMonth()+1;
+    let month = new Date().getMonth() + 1;
     if (month < 10) {
       month = '0' + month;
     }
     const year = new Date().getFullYear();
-    const fullDate = `${year}-${month}-${day}`
-    return fullDate;    
-  }
+    const fullDate = `${year}-${month}-${day}`;
+    return fullDate;
+  };
 
   return (
     <div>
@@ -106,43 +108,43 @@ const Contact = () => {
         />
         <div className='date-picker'>
           <TextField
-          id="start-date"
-          label="Date d'arrivée"
-          type="date"
-          variant='outlined'
-          name='startDate'
-          value={booking.startDate}
-          onChange={(e) => handleChangeBooking(e)}
-          InputLabelProps={{
-            shrink: true,
-          }}
-          InputProps={{
-            inputProps: { min: getFullDate() }
-          }}
+            id='start-date'
+            label="Date d'arrivée"
+            type='date'
+            variant='outlined'
+            name='startDate'
+            value={booking.startDate}
+            onChange={(e) => handleChangeBooking(e)}
+            InputLabelProps={{
+              shrink: true
+            }}
+            InputProps={{
+              inputProps: { min: getFullDate() }
+            }}
           />
           <TextField
-          id="end-date"
-          label="Date de départ"
-          type="date"
-          variant='outlined'
-          name='endDate'
-          onChange={(e) => handleChangeBooking(e)}
-          value={booking.endDate}
-          InputLabelProps={{
-            shrink: true,
-          }}
-          InputProps={{
-            inputProps: booking.startDate ? 
-            { min : booking.startDate } :
-            { min : getFullDate() }
-          }}
-          /> 
-        </div> 
+            id='end-date'
+            label='Date de départ'
+            type='date'
+            variant='outlined'
+            name='endDate'
+            onChange={(e) => handleChangeBooking(e)}
+            value={booking.endDate}
+            InputLabelProps={{
+              shrink: true
+            }}
+            InputProps={{
+              inputProps: booking.startDate
+                ? { min: booking.startDate }
+                : { min: getFullDate() }
+            }}
+          />
+        </div>
         <TextField
           className='input-contact'
           id='message'
-          label="Message"
-          variant="outlined"
+          label='Message'
+          variant='outlined'
           value={booking.message}
           onChange={(e) => handleChangeBooking(e)}
           name='message'
