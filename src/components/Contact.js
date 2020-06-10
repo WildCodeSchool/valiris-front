@@ -2,13 +2,8 @@ import React ,{ useState }from 'react';
 import { TextField } from '@material-ui/core';
 import '../styles/contact.css';
 import '../styles/language-selector.css';
-// import Grid from '@material-ui/core/Grid';
-// import DateFnsUtils from '@date-io/date-fns';
-// import {
-//   MuiPickersUtilsProvider,
-//   KeyboardTimePicker,
-//   KeyboardDatePicker,
-// } from '@material-ui/pickers';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 const Contact = () => {
@@ -18,6 +13,9 @@ const Contact = () => {
     phone: '',
     email: ''
   })
+
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
 
   const handleChange = (e) => {
     setForm({...form, [e.target.name]: e.target.value});
@@ -70,17 +68,25 @@ const Contact = () => {
         type='mail'
         required
         />
-        {/* <KeyboardDatePicker
-          margin="normal"
-          id="date-picker-dialog"
-          label="Date picker dialog"
-          format="MM/dd/yyyy"
-          value={selectedDate}
-          onChange={handleDateChange}
-          KeyboardButtonProps={{
-            'aria-label': 'change date',
-          }}
-        /> */}
+        <DatePicker
+        selected={startDate}
+        onChange={date => setStartDate(date)}
+        selectsStart
+        startDate={startDate}
+        endDate={endDate}
+        minDate={startDate}
+        dateFormat="dd/MM/yyyy"
+        />
+        <DatePicker
+        selected={endDate}
+        onChange={date => setEndDate(date)}
+        selectsEnd
+        startDate={startDate}
+        endDate={endDate}
+        minDate={startDate}
+        locale="pt-BR"
+        dateFormat="dd/MM/yyyy"
+        />
         <input
         className='input-contact input-submit'
         type='submit'
