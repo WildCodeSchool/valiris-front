@@ -5,7 +5,7 @@ import BurgerButton from './BurgerButton';
 import { useTranslation } from 'react-i18next';
 
 const Navbar = ({ show, handleOpen, handleClose }) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   let navClasses = 'nav-menu';
   if (show) {
     navClasses = 'nav-menu open';
