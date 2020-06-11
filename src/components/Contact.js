@@ -38,12 +38,15 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Post Axios
     axios.post('http://localhost:3000/forms', formData)
       .then(res => res.data)
       .then(data => console.log(data));
+    await axios.post('http://localhost:3000/send', formData)
+    .then(res => res.data)
+    .then(data => console.log(data));
   };
 
   const getFullDate = () => {
