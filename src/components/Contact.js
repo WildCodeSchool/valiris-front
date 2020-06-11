@@ -2,24 +2,25 @@ import React, { useState } from 'react';
 import { TextField } from '@material-ui/core';
 import '../styles/contact.css';
 import '../styles/language-selector.css';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios';
 
 const Contact = () => {
-  const [contact, setContact] = useState({
+  const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
     phone: '',
-    email: ''
-  });
-  
-  const [booking, setBooking] = useState({
+    email: '',
     message: '',
     startDate: '',
     endDate: ''
-  })
+  });
 
+  // const [booking, setBooking] = useState({
+  //   message: '',
+  //   startDate: '',
+  //   endDate: ''
+  // });
   // createTask = () => {
   //   this.setState({ newTask: { ...this.state.newTask, _submitting: true } });
   //   const { newTask } = this.state;
@@ -33,33 +34,28 @@ const Contact = () => {
   //     });
   // }
 
-  const handleChangeContact = (e) => {
-    setContact({ ...contact, [e.target.name]: e.target.value });
-  };
-
-  const handleChangeBooking = (e) => {
-    setBooking({ ...booking, [e.target.name]: e.target.value });
+  const handleChangeForm = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Post Axios
-    axios.post('http://localhost:3000/contacts', contact)
+    axios.post('http://localhost:3000/forms', formData)
       .then(res => res.data)
       .then(data => console.log(data));
-      
   };
 
   const getFullDate = () => {
     const day = new Date().getDate();
-    let month = new Date().getMonth()+1;
+    let month = new Date().getMonth() + 1;
     if (month < 10) {
       month = '0' + month;
     }
     const year = new Date().getFullYear();
-    const fullDate = `${year}-${month}-${day}`
-    return fullDate;    
-  }
+    const fullDate = `${year}-${month}-${day}`;
+    return fullDate;
+  };
 
   return (
     <div>
@@ -70,8 +66,8 @@ const Contact = () => {
           id='Prénom'
           label='Prénom'
           variant='outlined'
-          value={contact.firstname}
-          onChange={(e) => handleChangeContact(e)}
+          value={formData.firstname}
+          onChange={(e) => handleChangeForm(e)}
           name='firstname'
         />
         <TextField
@@ -79,8 +75,8 @@ const Contact = () => {
           id='Nom'
           label='Nom'
           variant='outlined'
-          value={contact.lastname}
-          onChange={(e) => handleChangeContact(e)}
+          value={formData.lastname}
+          onChange={(e) => handleChangeForm(e)}
           name='lastname'
         />
         <TextField
@@ -88,8 +84,8 @@ const Contact = () => {
           id='Téléphone'
           label='Téléphone'
           variant='outlined'
-          value={contact.phone}
-          onChange={(e) => handleChangeContact(e)}
+          value={formData.phone}
+          onChange={(e) => handleChangeForm(e)}
           name='phone'
           required
         />
@@ -98,53 +94,53 @@ const Contact = () => {
           id='E-mail'
           label='E-mail'
           variant='outlined'
-          value={contact.email}
-          onChange={(e) => handleChangeContact(e)}
+          value={formData.email}
+          onChange={(e) => handleChangeForm(e)}
           name='email'
           type='mail'
           required
         />
         <div className='date-picker'>
           <TextField
-          id="start-date"
-          label="Date d'arrivée"
-          type="date"
-          variant='outlined'
-          name='startDate'
-          value={booking.startDate}
-          onChange={(e) => handleChangeBooking(e)}
-          InputLabelProps={{
-            shrink: true,
-          }}
-          InputProps={{
-            inputProps: { min: getFullDate() }
-          }}
+            id='start-date'
+            label="Date d'arrivée"
+            type='date'
+            variant='outlined'
+            name='startDate'
+            value={formData.startDate}
+            onChange={(e) => handleChangeForm(e)}
+            InputLabelProps={{
+              shrink: true
+            }}
+            InputProps={{
+              inputProps: { min: getFullDate() }
+            }}
           />
           <TextField
-          id="end-date"
-          label="Date de départ"
-          type="date"
-          variant='outlined'
-          name='endDate'
-          onChange={(e) => handleChangeBooking(e)}
-          value={booking.endDate}
-          InputLabelProps={{
-            shrink: true,
-          }}
-          InputProps={{
-            inputProps: booking.startDate ? 
-            { min : booking.startDate } :
-            { min : getFullDate() }
-          }}
-          /> 
-        </div> 
+            id='end-date'
+            label='Date de départ'
+            type='date'
+            variant='outlined'
+            name='endDate'
+            onChange={(e) => handleChangeForm(e)}
+            value={formData.endDate}
+            InputLabelProps={{
+              shrink: true
+            }}
+            InputProps={{
+              inputProps: formData.startDate
+                ? { min: formData.startDate }
+                : { min: getFullDate() }
+            }}
+          />
+        </div>
         <TextField
           className='input-contact'
           id='message'
-          label="Message"
-          variant="outlined"
-          value={booking.message}
-          onChange={(e) => handleChangeBooking(e)}
+          label='Message'
+          variant='outlined'
+          value={formData.message}
+          onChange={(e) => handleChangeForm(e)}
           name='message'
           multiline
           rows={8}
