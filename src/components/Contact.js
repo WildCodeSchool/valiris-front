@@ -45,8 +45,8 @@ const Contact = () => {
       .then(res => res.data)
       .then(data => console.log(data));
     await axios.post('http://localhost:3000/send', formData)
-    .then(res => res.data)
-    .then(data => console.log(data));
+      .then(res => res.data)
+      .then(data => console.log(data));
   };
 
   const getFullDate = () => {
