@@ -12,4 +12,16 @@
 .input-submit {
     width: 10%;
     height: 30px;
+    cursor: pointer;
+}
+
+.date-input {
+    margin: 20px !important;
+}
+
+@media screen and (max-width: 600px) {
+    .date-picker {
+        display: flex;
+        flex-direction: column;
+    }
 }

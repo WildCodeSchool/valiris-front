@@ -18,9 +18,9 @@ const LanguageSelector = () => {
 
   return (
     <div className='toggle-container'>
-      <p>en</p>
+      <p>EN</p>
       <Switch size='small' checked={toggled} color='primary' onChange={changeLanguage} />
-      <p>fr</p>
+      <p>FR</p>
     </div>
   );
 };
