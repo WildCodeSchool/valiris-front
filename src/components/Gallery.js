@@ -9,17 +9,17 @@ const Gallery = () => {
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_BASE_URL}/apartments`)
-    .then(res => res.data)
-    .then(data => setApartments(data))
-  }, [])
+      .then(res => res.data)
+      .then(data => setApartments(data));
+  }, []);
 
-  if(!apartments){
-    return <p>loading...</p>
+  if (!apartments) {
+    return <p>loading...</p>;
   } else {
     return (
       <div>
         {apartments.map(apartment => {
-          return <GalleryItem apartmentDetails={apartment}/>
+          return <GalleryItem apartmentDetails={apartment} />;
         })}
       </div>
     );

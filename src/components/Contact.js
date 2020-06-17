@@ -39,6 +39,34 @@ const Contact = () => {
     message: ''
   });
 
+  const submitValidation = () => {
+    const { firstname, lastname, phone, email, message } = formData;
+    let copyErrorInput = errorInput;
+    let copyMsgError = msgError;
+      if (firstname.length === 0) {
+        copyErrorInput.firstname = true;
+        copyMsgError.firstname = t('form-firstname-required.label');
+      }
+      if (lastname.length === 0) {
+        copyErrorInput.lastname = true;
+        copyMsgError.lastname = t('form-lastname-required.label');
+      }
+      if (phone.length === 0) {
+        copyErrorInput.phone = true;
+        copyMsgError.phone = t('form-phone-required.label');
+      }
+      if (email.length === 0) {
+        copyErrorInput.email = true;
+        copyMsgError.email = t('form-email-required.label');
+      }
+      if (message.length === 0) {
+        copyErrorInput.message = true;
+        copyMsgError.message = t('form-message-required.label');
+      }
+      setErrorInput({ ...copyErrorInput });
+      setMsgError({ ...copyMsgError });
+  }
+
   const handleBlur = (e) => {
     const emailValidator = /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}/;
     const phoneValidator = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/; /* eslint-disable-line */
@@ -95,32 +123,35 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-    setErrorForm(false);
-    axios.post('http://localhost:3000/forms', formData)
-      .then(res => res.data)
-      .then(data => {
-        console.log(data);
-        setFormData({
-          firstname: '',
-          lastname: '',
-          phone: '',
-          email: '',
-          message: '',
-          startDate: '',
-          endDate: ''
+    submitValidation()
+    if(Object.values(errorInput).filter(e => e).length === 0 ){
+      setLoading(true);
+      setErrorForm(false);
+      axios.post('http://localhost:3000/forms', formData)
+        .then(res => res.data)
+        .then(data => {
+          console.log(data);
+          setFormData({
+            firstname: '',
+            lastname: '',
+            phone: '',
+            email: '',
+            message: '',
+            startDate: '',
+            endDate: ''
+          });
+          setMessageForm(true);
+          setLoading(false);
+        })
+        .catch(error => {
+          setErrorForm(true);
+          setLoading(false);
+          setMessageForm(true);
+          console.log(error);
         });
-        setMessageForm(true);
-        setLoading(false);
-      })
-      .catch(error => {
-        setErrorForm(true);
-        setLoading(false);
-        setMessageForm(true);
-        console.log(error);
-      });
+    }
   };
 
   const getFullDate = () => {
