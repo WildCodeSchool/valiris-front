@@ -40,9 +40,8 @@ const Contact = () => {
   });
 
   const handleBlur = (e) => {
-    console.log(e.target);
-    const emailValidator = /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}/
-    const phoneValidator = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/
+    const emailValidator = /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}/;
+    const phoneValidator = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
     if (e.target.name === 'email' && !emailValidator.test(e.target.value) && e.target.value.length >= 1) {
       setErrorInput({
         ...errorInput, email: true
@@ -79,7 +78,7 @@ const Contact = () => {
         ...msgError, [e.target.name]: ''
       });
     }
-  }
+  };
 
   function Alert (props) {
     return <MuiAlert elevation={6} variant='filled' {...props} />;
@@ -103,27 +102,18 @@ const Contact = () => {
     axios.post('http://localhost:3000/forms', formData)
       .then(res => res.data)
       .then(data => {
-        axios.post('http://localhost:3000/send', formData)
-          .then(res => res.data)
-          .then(data => {
-            setFormData({
-              firstname: '',
-              lastname: '',
-              phone: '',
-              email: '',
-              message: '',
-              startDate: '',
-              endDate: ''
-            });
-            setMessageForm(true);
-            setLoading(false);
-          })
-          .catch(error => {
-            setErrorForm(true);
-            setLoading(false);
-            setMessageForm(true);
-            console.log(error);
-          });
+        console.log(data)
+        setFormData({
+          firstname: '',
+          lastname: '',
+          phone: '',
+          email: '',
+          message: '',
+          startDate: '',
+          endDate: ''
+        });
+        setMessageForm(true);
+        setLoading(false);
       })
       .catch(error => {
         setErrorForm(true);
@@ -251,11 +241,13 @@ const Contact = () => {
           rows={8}
           required
         />
-        {loading ? <CircularProgress style={{ width: '100px', height: '100px' }} /> : <input
-          className='input-contact input-submit'
-          type='submit'
-          value={t('form-submit.label')}
-        />}
+        {loading
+          ? <CircularProgress style={{ width: '100px', height: '100px' }} />
+          : <input
+            className='input-contact input-submit'
+            type='submit'
+            value={t('form-submit.label')}
+          />}
         <Snackbar open={messageForm} autoHideDuration={6000} onClose={handleCloseMui}>
           <Alert onClose={handleCloseMui} severity={!errorForm ? 'success' : 'error'}>
             {!errorForm ? 'Votre message a bien été envoyé et sera traité dans les meilleurs délais' : 'Une erreur est survenue, veuillez essayer à nouveau'}
