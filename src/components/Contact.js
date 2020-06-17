@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 const Contact = () => {
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
-    firstname: '',
+    firstname:'',
     lastname: '',
     phone: '',
     email: '',
@@ -39,17 +39,59 @@ const Contact = () => {
     message: ''
   });
 
+  const validate = () => {
+  //   const tabformData = [];
+  //   Object.keys(formData).forEach(function(key) {
+  //     tabformData.push(key + ': ' + formData[key]);
+
+  // });
+  //   console.log(tabformData)
+  //   tabformData.filter(champ => champ.split(':')[0] !== 'startDate' && champ.split(':')[0] !== 'endDate').map(champ => {
+  //     if (champ.split(':')[1].length === 0 ){
+  //       setErrorInput({...errorInput, [champ.split(':')[0]]: true});
+  //       setMsgError({
+  //         ...msgError, [champ.split(':')[0]]: t('form-message-error.label', { champ: t(`form-${champ.split(':')[0]}.label`) })
+  //       });
+  //     }
+  //   })
+    const emailValidator = /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}/;
+    const phoneValidator = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/; /* eslint-disable-line */
+    // if (!emailValidator.test(formData.email) && formData.email.length >= 1) {
+    //   setErrorInput({
+    //     ...errorInput, email: true
+    //   });
+    //   setMsgError({
+    //     ...msgError, email: t('form-email-error.label')
+    //   });
+    // }
+    if (formData.firstname.length === 0){
+      setErrorInput({...errorInput, firstname: true})
+      setMsgError({...msgError, firstname : t('form-firstname.label')})
+    }
+    if (formData.lastname.length === 0){
+      setErrorInput({...errorInput, lastname: true})
+      setMsgError({...msgError, lastname : t('form-lastname.label')})
+    }
+    if (formData.phone.length === 0){
+      setErrorInput({...errorInput, phone: true})
+      setMsgError({...msgError, phone : t('form-phone.label')})
+    }
+    if (formData.email.length === 0){
+      setErrorInput({...errorInput, email: true})
+      setMsgError({...msgError, email : t('form-email.label')})
+    }
+    // if (formData.message.length === 0){
+    //   setErrorInput({...errorInput, message: true})
+    //   setMsgError({...msgError, message : t('form-message-error.label')})
+    // }
+  }
+
+  
   const handleBlur = (e) => {
     const emailValidator = /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}/;
     const phoneValidator = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
-    if (e.target.name === 'email' && !emailValidator.test(e.target.value) && e.target.value.length >= 1) {
-      setErrorInput({
-        ...errorInput, email: true
-      });
-      setMsgError({
-        ...msgError, email: t('form-email-error.label')
-      });
-    } else if (e.target.name === 'phone' && !phoneValidator.test(e.target.value) && e.target.value.length >= 1) {
+
+    else if (e.target.name === 'phone' && !phoneValidator.test(e.target.value) && e.target.value.length >= 1) {
       setErrorInput({
         ...errorInput, phone: true
       });
@@ -79,7 +121,7 @@ const Contact = () => {
       });
     }
   };
-
+ 
   function Alert (props) {
     return <MuiAlert elevation={6} variant='filled' {...props} />;
   }
@@ -97,12 +139,13 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    validate()
     setLoading(true);
     setErrorForm(false);
     axios.post('http://localhost:3000/forms', formData)
       .then(res => res.data)
       .then(data => {
-        console.log(data)
+        console.log(data);
         setFormData({
           firstname: '',
           lastname: '',
@@ -141,7 +184,7 @@ const Contact = () => {
           className='input-contact'
           error={!!errorInput.firstname}
           helperText={msgError.firstname}
-          id={t('form-firstname.label')}
+          // id={t('form-firstname.label')}
           label={t('form-firstname.label')}
           variant='outlined'
           value={formData.firstname}
@@ -154,7 +197,7 @@ const Contact = () => {
           className='input-contact'
           error={!!errorInput.lastname}
           helperText={msgError.lastname}
-          id={t('form-lastname.label')}
+          // id={t('form-lastname.label')}
           label={t('form-lastname.label')}
           variant='outlined'
           value={formData.lastname}
@@ -167,7 +210,7 @@ const Contact = () => {
           className='input-contact'
           error={!!errorInput.phone}
           helperText={msgError.phone}
-          id={t('form-phone.label')}
+          // id={t('form-phone.label')}
           label={t('form-phone.label')}
           variant='outlined'
           value={formData.phone}
@@ -180,7 +223,7 @@ const Contact = () => {
           error={!!errorInput.email}
           helperText={msgError.email}
           className='input-contact'
-          id={t('form-email.label')}
+          id='email'
           label={t('form-email.label')}
           variant='outlined'
           value={formData.email}
@@ -241,13 +284,7 @@ const Contact = () => {
           rows={8}
           required
         />
-        {loading
-          ? <CircularProgress style={{ width: '100px', height: '100px' }} />
-          : <input
-            className='input-contact input-submit'
-            type='submit'
-            value={t('form-submit.label')}
-          />}
+        {loading ? <CircularProgress style={{ width: '100px', height: '100px' }} /> : <input className='input-contact input-submit' type='submit' value={t('form-submit.label')} />}
         <Snackbar open={messageForm} autoHideDuration={6000} onClose={handleCloseMui}>
           <Alert onClose={handleCloseMui} severity={!errorForm ? 'success' : 'error'}>
             {!errorForm ? 'Votre message a bien été envoyé et sera traité dans les meilleurs délais' : 'Une erreur est survenue, veuillez essayer à nouveau'}
