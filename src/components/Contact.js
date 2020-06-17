@@ -46,7 +46,6 @@ const Contact = () => {
     axios.post('http://localhost:3000/contacts', contact)
       .then(res => res.data)
       .then(data => console.log(data));
-      
 
     axios.post('http://localhost:3000/messages', { content: booking.message })
       .then(res => res.data)
