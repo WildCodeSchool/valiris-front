@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 const Contact = () => {
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
-    firstname:'',
+    firstname: '',
     lastname: '',
     phone: '',
     email: '',
