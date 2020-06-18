@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  withStyles,
   MuiThemeProvider,
   createMuiTheme
 } from "@material-ui/core/styles";
