@@ -31,6 +31,7 @@ const Contact = () => {
     email: false,
     message: false
   });
+  
   const [msgError, setMsgError] = useState({
     firstname: '',
     lastname: '',
@@ -39,33 +40,34 @@ const Contact = () => {
     message: ''
   });
 
+
   const submitValidation = () => {
     const { firstname, lastname, phone, email, message } = formData;
     let copyErrorInput = errorInput;
     let copyMsgError = msgError;
-      if (firstname.length === 0) {
-        copyErrorInput.firstname = true;
-        copyMsgError.firstname = t('form-firstname-required.label');
-      }
-      if (lastname.length === 0) {
-        copyErrorInput.lastname = true;
-        copyMsgError.lastname = t('form-lastname-required.label');
-      }
-      if (phone.length === 0) {
-        copyErrorInput.phone = true;
-        copyMsgError.phone = t('form-phone-required.label');
-      }
-      if (email.length === 0) {
-        copyErrorInput.email = true;
-        copyMsgError.email = t('form-email-required.label');
-      }
-      if (message.length === 0) {
-        copyErrorInput.message = true;
-        copyMsgError.message = t('form-message-required.label');
-      }
-      setErrorInput({ ...copyErrorInput });
-      setMsgError({ ...copyMsgError });
-  }
+    if (firstname.length === 0) {
+      copyErrorInput.firstname = true;
+      copyMsgError.firstname = t('form-firstname-required.label');
+    }
+    if (lastname.length === 0) {
+      copyErrorInput.lastname = true;
+      copyMsgError.lastname = t('form-lastname-required.label');
+    }
+    if (phone.length === 0) {
+      copyErrorInput.phone = true;
+      copyMsgError.phone = t('form-phone-required.label');
+    }
+    if (email.length === 0) {
+      copyErrorInput.email = true;
+      copyMsgError.email = t('form-email-required.label');
+    }
+    if (message.length === 0) {
+      copyErrorInput.message = true;
+      copyMsgError.message = t('form-message-required.label');
+    }
+    setErrorInput({ ...copyErrorInput });
+    setMsgError({ ...copyMsgError });
+  };
 
   const handleBlur = (e) => {
     const emailValidator = /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}/;
@@ -125,8 +127,8 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    submitValidation()
-    if(Object.values(errorInput).filter(e => e).length === 0 ){
+    submitValidation();
+    if (Object.values(errorInput).filter(e => e).length === 0) {
       setLoading(true);
       setErrorForm(false);
       axios.post('http://localhost:3000/forms', formData)
@@ -272,7 +274,7 @@ const Contact = () => {
           rows={8}
           required
         />
-        {loading ? <CircularProgress style={{ width: '100px', height: '100px' }} /> : <input className='input-contact input-submit' type='submit' value={t('form-submit.label')} />}
+        {loading ? <CircularProgress style={{ width: '50px', height: '50px' }} /> : <input className='input-contact input-submit' type='submit' value={t('form-submit.label')} />}
         <Snackbar open={messageForm} autoHideDuration={6000} onClose={handleCloseMui}>
           <Alert onClose={handleCloseMui} severity={!errorForm ? 'success' : 'error'}>
             {!errorForm ? 'Votre message a bien été envoyé et sera traité dans les meilleurs délais' : 'Une erreur est survenue, veuillez essayer à nouveau'}
