@@ -1,0 +1,58 @@
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/*/////////////// CARD //////////////*/
+.gallery-item {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.text-details {
+  height: 80px;
+}
+/*/////////////// BUTTON //////////////*/
+.read-more-button {
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px; 
+  text-decoration: none;
+  color: #f7f1e9ff;
+  background-color: #329797;
+  width: 110px; 
+  border: none;
+  padding: 0.5em;
+  margin-top: 10px;
+  transition: box-shadow 0.2s;
+}
+.read-more-button:hover {
+  color: #329797;
+  background-color: white;
+  border-color: 4px #329797;
+  box-shadow: 0px 0px 0px 4px #329797;
+}
+
+.read-more-button:focus {
+  outline: none;
+  border: none;
+}
+
+@media screen and (min-width: 850px) {
+  .gallery-item {
+  width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .gallery-item {
+    width: 30%;
+  }
+}

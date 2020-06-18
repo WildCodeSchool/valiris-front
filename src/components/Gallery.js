@@ -17,7 +17,7 @@ const Gallery = () => {
     return <p>loading...</p>;
   } else {
     return (
-      <div>
+      <div className='gallery-container'>
         {apartments.map(apartment => {
           return <GalleryItem key={apartment.id} apartmentDetails={apartment} />;
         })}
