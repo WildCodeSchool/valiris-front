@@ -38,34 +38,35 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [msgAlert, setMsgAlert] = useState('');
 
   const submitValidation = () => {
     const { firstname, lastname, phone, email, message } = formData;
-    let copyErrorInput = errorInput;
-    let copyMsgError = msgError;
-      if (firstname.length === 0) {
-        copyErrorInput.firstname = true;
-        copyMsgError.firstname = t('form-firstname-required.label');
-      }
-      if (lastname.length === 0) {
-        copyErrorInput.lastname = true;
-        copyMsgError.lastname = t('form-lastname-required.label');
-      }
-      if (phone.length === 0) {
-        copyErrorInput.phone = true;
-        copyMsgError.phone = t('form-phone-required.label');
-      }
-      if (email.length === 0) {
-        copyErrorInput.email = true;
-        copyMsgError.email = t('form-email-required.label');
-      }
-      if (message.length === 0) {
-        copyErrorInput.message = true;
-        copyMsgError.message = t('form-message-required.label');
-      }
-      setErrorInput({ ...copyErrorInput });
-      setMsgError({ ...copyMsgError });
-  }
+    const copyErrorInput = errorInput;
+    const copyMsgError = msgError;
+    if (firstname.length === 0) {
+      copyErrorInput.firstname = true;
+      copyMsgError.firstname = t('form-firstname-required.label');
+    }
+    if (lastname.length === 0) {
+      copyErrorInput.lastname = true;
+      copyMsgError.lastname = t('form-lastname-required.label');
+    }
+    if (phone.length === 0) {
+      copyErrorInput.phone = true;
+      copyMsgError.phone = t('form-phone-required.label');
+    }
+    if (email.length === 0) {
+      copyErrorInput.email = true;
+      copyMsgError.email = t('form-email-required.label');
+    }
+    if (message.length === 0) {
+      copyErrorInput.message = true;
+      copyMsgError.message = t('form-message-required.label');
+    }
+    setErrorInput({ ...copyErrorInput });
+    setMsgError({ ...copyMsgError });
+  };
 
   const handleBlur = (e) => {
     const emailValidator = /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}/;
@@ -125,10 +126,10 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    submitValidation()
-    if(Object.values(errorInput).filter(e => e).length === 0 ){
+    submitValidation();
+    setErrorForm(false);
+    if (Object.values(errorInput).filter(e => e).length === 0) {
       setLoading(true);
-      setErrorForm(false);
       axios.post('http://localhost:3000/forms', formData)
         .then(res => res.data)
         .then(data => {
@@ -144,13 +145,19 @@ const Contact = () => {
           });
           setMessageForm(true);
           setLoading(false);
+          setMsgAlert('Votre message a bien été envoyé et sera traité dans les meilleurs délais');
         })
         .catch(error => {
+          console.error(error);
+          setMsgAlert('Une erreur est survenue, veuillez essayer à nouveau');
           setErrorForm(true);
           setLoading(false);
           setMessageForm(true);
-          console.log(error);
         });
+    } else {
+      setMsgAlert('Merci de bien renseigner l\'ensemble des champs requis.');
+      setMessageForm(true);
+      setErrorForm(true);
     }
   };
 
@@ -275,10 +282,9 @@ const Contact = () => {
         {loading ? <CircularProgress style={{ width: '100px', height: '100px' }} /> : <input className='input-contact input-submit' type='submit' value={t('form-submit.label')} />}
         <Snackbar open={messageForm} autoHideDuration={6000} onClose={handleCloseMui}>
           <Alert onClose={handleCloseMui} severity={!errorForm ? 'success' : 'error'}>
-            {!errorForm ? 'Votre message a bien été envoyé et sera traité dans les meilleurs délais' : 'Une erreur est survenue, veuillez essayer à nouveau'}
+            {msgAlert}
           </Alert>
         </Snackbar>
-        {/* {messageForm && <p>Votre message a bien été envoyé et sera traité dans les meilleurs délais</p>} */}
       </form>
     </div>
   );

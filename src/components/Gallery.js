@@ -19,7 +19,7 @@ const Gallery = () => {
     return (
       <div>
         {apartments.map(apartment => {
-          return <GalleryItem apartmentDetails={apartment} />;
+          return <GalleryItem key={apartment.id} apartmentDetails={apartment} />;
         })}
       </div>
     );
