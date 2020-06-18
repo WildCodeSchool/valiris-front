@@ -8,7 +8,7 @@ const ApartmentDetails = (props) => {
   const [apartment, setApartment] = useState();
   // const [availabilities, setAvailabilities] = useState();
 
-  useEffect( () => {
+  useEffect(() => {
     const id = props.match.params.id;
     axios.get(`${process.env.REACT_APP_API_BASE_URL}/apartments/${id}`)
       .then(res => res.data)
