@@ -279,7 +279,7 @@ const Contact = () => {
           rows={8}
           required
         />
-        {loading ? <CircularProgress style={{ width: '100px', height: '100px' }} /> : <input className='input-contact input-submit' type='submit' value={t('form-submit.label')} />}
+        {loading ? <CircularProgress style={{ width: '50px', height: '50px', marginTop: '20px'}} /> : <input className='input-contact input-submit' type='submit' value={t('form-submit.label')} />}
         <Snackbar open={messageForm} autoHideDuration={6000} onClose={handleCloseMui}>
           <Alert onClose={handleCloseMui} severity={!errorForm ? 'success' : 'error'}>
             {msgAlert}
