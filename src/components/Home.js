@@ -27,11 +27,11 @@ const Home = () => {
           <img src='https://www.planete-deco.fr/wp-content/uploads/2020/03/TO1.jpeg' alt='caroussel 3' />
         </div>
       </Carousel>
-        <div>
-          <p className='catch-phrase'>
+      <div>
+        <p className='catch-phrase'>
           Dans un cadre naturel préservé, à la naissance du vallon de Rochecardon, profitez d'un appartement 2 pièces, de 36 à 40 m², meublé, contemporain et intégralement équipé à neuf, dans un double corps de bâtiment en pierre de taille.
-          </p>
-        </div>
+        </p>
+      </div>
     </div>
   );
 };

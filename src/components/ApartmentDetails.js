@@ -25,30 +25,30 @@ const ApartmentDetails = (props) => {
     console.log(apartment);
     return (
       <>
-      <div>
-        <Carousel
-        autoPlay
-        showArrows
-        showStatus={false}
-        infiniteLoop
-        stopOnHover={false}
-        interval={6000}
-        transitionTime={600}
-        width='80%'
-      >
         <div>
-          <img src={apartment.main_picture_url} alt='Appartement' />
+          <Carousel
+            autoPlay
+            showArrows
+            showStatus={false}
+            infiniteLoop
+            stopOnHover={false}
+            interval={6000}
+            transitionTime={600}
+            width='80%'
+          >
+            <div>
+              <img src={apartment.main_picture_url} alt='Appartement' />
+            </div>
+            {apartment.url.map((url, index) => {
+              return (
+                <div key={index}>
+                  <img src={url} alt='Appartment' />
+                </div>
+              );
+            })}
+          </Carousel>
         </div>
-        {apartment.url.map((url, index) => {
-          return (
-            <div key={index}>
-            <img src={url} alt='Appartment' />
-          </div> 
-          )
-        })}
-      </Carousel>
-      </div>
-      <p>{apartment.details_fr}</p>
+        <p>{apartment.details_fr}</p>
       </>
     );
   }

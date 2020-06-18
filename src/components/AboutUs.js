@@ -15,7 +15,7 @@ const AboutUs = () => {
         </div>
         <div>
           <p>
-          Cette grande maison de caractère, patrimoine Limonois, a fait l'objet d'une rénovation intégrale en 2020. Au pied des Monts d'Or, profitant d'une orientation Sud et Ouest, elle offre une vue exceptionnelle  sur le Vallon de Rochecardon, les Monts du Lyonnais et les Monts du Forez au loin. Véritable havre de paix, son emplacement permet de profiter de larges espaces, d'un horizon dégagé et d'un environnement naturel protégé. 
+          Cette grande maison de caractère, patrimoine Limonois, a fait l'objet d'une rénovation intégrale en 2020. Au pied des Monts d'Or, profitant d'une orientation Sud et Ouest, elle offre une vue exceptionnelle  sur le Vallon de Rochecardon, les Monts du Lyonnais et les Monts du Forez au loin. Véritable havre de paix, son emplacement permet de profiter de larges espaces, d'un horizon dégagé et d'un environnement naturel protégé.
 
           Valiris se situe à 25 minutes en bus du centre de Lyon. L'occasion de profiter de votre passage pour visiter Lyon, ses musées (Confluence, Musée Miniatures et Cinéma, Musée des Beaux Arts, etc.) et son centre historique (Vieux-Lyon, cathédrale St Jean). La ville est classée au Patrimoine Mondial de l’Unesco et oscarisée "Meilleure destination Européenne week-end" au World Travel Awards 2016 et Capitale Européenne 2019 du Smart Tourism.
 
