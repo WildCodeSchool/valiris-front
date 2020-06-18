@@ -130,7 +130,7 @@ const Contact = () => {
     setErrorForm(false);
     if (Object.values(errorInput).filter(e => e).length === 0) {
       setLoading(true);
-      axios.post('http://localhost:3000/forms', formData)
+      axios.post(`${process.env.REACT_APP_API_BASE_URL}/forms`, formData)
         .then(res => res.data)
         .then(data => {
           console.log(data);

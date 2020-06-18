@@ -1,4 +1,4 @@
- * {
+* {
   margin: 0;
   padding: 0;
 }
@@ -14,3 +14,4 @@ main {
 footer {
   flex-shrink: 0;
 }
+
