@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const ApartmentDetails = (props) => {
   const [apartment, setApartment] = useState();
-  //const [availabilities, setAvailabilities] = useState();
+  // const [availabilities, setAvailabilities] = useState();
 
   useEffect(async () => {
     const id = props.match.params.id;

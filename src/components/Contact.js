@@ -31,7 +31,7 @@ const Contact = () => {
     email: false,
     message: false
   });
-  
+
   const [msgError, setMsgError] = useState({
     firstname: '',
     lastname: '',
@@ -40,11 +40,10 @@ const Contact = () => {
     message: ''
   });
 
-
   const submitValidation = () => {
     const { firstname, lastname, phone, email, message } = formData;
-    let copyErrorInput = errorInput;
-    let copyMsgError = msgError;
+    const copyErrorInput = errorInput;
+    const copyMsgError = msgError;
     if (firstname.length === 0) {
       copyErrorInput.firstname = true;
       copyMsgError.firstname = t('form-firstname-required.label');

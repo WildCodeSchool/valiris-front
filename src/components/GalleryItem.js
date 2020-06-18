@@ -48,7 +48,7 @@
 //   return (
 //     <div>
 //       <Link to={`/gallerie/${id}`}>{name}</Link>
-    
+
 //     </div>
 //   );
 // };
