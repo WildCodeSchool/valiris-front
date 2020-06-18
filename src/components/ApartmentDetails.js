@@ -8,9 +8,9 @@ const ApartmentDetails = (props) => {
   const [apartment, setApartment] = useState();
   // const [availabilities, setAvailabilities] = useState();
 
-  useEffect(async () => {
+  useEffect(() => {
     const id = props.match.params.id;
-    await axios.get(`${process.env.REACT_APP_API_BASE_URL}/apartments/${id}`)
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/apartments/${id}`)
       .then(res => res.data)
       .then(data => setApartment(data));
 
@@ -25,7 +25,7 @@ const ApartmentDetails = (props) => {
     console.log(apartment);
     return (
       <>
-        <div>
+        <div className='carousel-container-detail'>
           <Carousel
             autoPlay
             showArrows

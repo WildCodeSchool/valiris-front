@@ -56,3 +56,16 @@
     width: 30%;
   }
 }
+
+.thumbs {
+  text-align: center;
+  max-width: 1200px;
+}
+
+.carousel-container-detail{
+  margin: 0 auto;
+}
+
+.carousel-slider{
+  margin: 0 auto !important;
+}
