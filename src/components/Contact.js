@@ -111,7 +111,7 @@ const Contact = () => {
     }
   };
 
-  function Alert (props) {
+  function Alert(props) {
     return <MuiAlert elevation={6} variant='filled' {...props} />;
   }
 
@@ -176,6 +176,7 @@ const Contact = () => {
 
   return (
     <div>
+      <h2>{t('contact-title.label')}</h2>
       <form className='contact-form' noValidate autoComplete='off' onSubmit={(e) => handleSubmit(e)}>
         <TextField
           className='input-contact'
@@ -287,8 +288,20 @@ const Contact = () => {
             {msgAlert}
           </Alert>
         </Snackbar>
-        <MapComponent />
       </form>
+      <h2>{t('contact-map-title.label')}</h2>
+      <div className='find-us-container'>
+        <MapComponent />
+        <div>
+          <ul>
+            <li>{t('contact-adress.label')} : 470 Route de Saint Didier 69760 Limonest</li>
+            <li>{t('contact-phone.label')} : XX.XX.XX.XX.XX</li>
+            <li>Email : xxxxxx@xxxxx.fr</li>
+          </ul>
+          <p>{t('contact-access.label')} : </p>
+        </div>
+
+      </div>
     </div>
   );
 };

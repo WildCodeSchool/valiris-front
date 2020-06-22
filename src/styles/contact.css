@@ -21,6 +21,13 @@
     margin: 20px !important;
 }
 
+/*//////////////// Localisation /////////////////*/
+
+.find-us-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 @media screen and (max-width: 600px) {
     .date-picker {
         display: flex;
