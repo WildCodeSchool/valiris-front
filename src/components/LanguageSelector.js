@@ -2,6 +2,23 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Switch from '@material-ui/core/Switch';
 import '../styles/language-selector.css';
+import { withStyles } from '@material-ui/core/styles';
+import { orange } from '@material-ui/core/colors';
+
+
+const CustomSwitch = withStyles({
+  switchBase: {
+    color: orange[50],
+    '&$checked': {
+      color: orange[50],
+    },
+    '&$checked + $track': {
+      backgroundColor: orange[50],
+    },
+  },
+  checked: {},
+  track: {},
+})(Switch);
 
 const LanguageSelector = () => {
   const [toggled, setToggled] = useState(true);
@@ -16,10 +33,11 @@ const LanguageSelector = () => {
     }
   };
 
+
   return (
     <div className='toggle-container'>
       <p>EN</p>
-      <Switch size='small' checked={toggled} color='primary' onChange={changeLanguage} />
+      <CustomSwitch size='small' checked={toggled} color='primary' onChange={changeLanguage} />
       <p>FR</p>
     </div>
   );

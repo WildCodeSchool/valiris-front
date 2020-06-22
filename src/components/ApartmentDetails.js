@@ -1,29 +1,30 @@
 import React, { useEffect, useState } from 'react';
-// import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../styles/detail.css';
+import { useTranslation } from 'react-i18next';
 
 const ApartmentDetails = (props) => {
+  const { i18n } = useTranslation();
   const [apartment, setApartment] = useState();
   // const [availabilities, setAvailabilities] = useState();
 
   useEffect(() => {
     const id = props.match.params.id;
-    axios.get(`${process.env.REACT_APP_API_BASE_URL}/apartments/${id}`)
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/apartments/${id}/${i18n.language}`)
       .then(res => res.data)
       .then(data => setApartment(data));
 
     // await axios.get(`${process.env.REACT_APP_API_BASE_URL}/apartments/${id}/availabilities`)
     //   .then(res => res.data)
     //   .then(data => setAvailabilities(data));
-  }, []);
+  }, [i18n.language]);
 
   if (!apartment) {
     return <p>loading...</p>;
   } else {
-    console.log(apartment);
+    console.log(i18n.language);
     return (
       <div className='details-container'>
         <h2 className='apartment-name'>{apartment.name}</h2>
@@ -49,7 +50,7 @@ const ApartmentDetails = (props) => {
             })}
           </Carousel>
         </div>
-        <p className='apartment-details'>{apartment.details_fr}</p>
+        <p className='apartment-details'>{apartment.details}</p>
       </div>
     );
   }

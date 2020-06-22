@@ -54,7 +54,7 @@ const theme = {
   }
 };
 
-const GalleryItem = ({ apartmentDetails: { id, name, title_fr, main_picture_url } }) => {
+const GalleryItem = ({ apartmentDetails: { id, name, title, main_picture_url } }) => {
   const { t } = useTranslation();
   return (
     <MuiThemeProvider theme={createMuiTheme(theme)}>
@@ -76,7 +76,7 @@ const GalleryItem = ({ apartmentDetails: { id, name, title_fr, main_picture_url 
               className='MuiTypography--subheading text-details'
               variant='caption'
             >
-              {title_fr}
+              {title}
             </Typography>
             <Link to={`/gallerie/${id}`}><button className='read-more-button'>{t('gallery-more-button.label')}</button></Link>
           </CardContent>

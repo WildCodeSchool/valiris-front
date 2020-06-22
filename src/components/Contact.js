@@ -10,7 +10,7 @@ import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
-  const { t } = useTranslation();
+  const { t , i18n } = useTranslation();
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
@@ -131,7 +131,7 @@ const Contact = () => {
     setErrorForm(false);
     if (Object.values(errorInput).filter(e => e).length === 0) {
       setLoading(true);
-      axios.post('http://localhost:3000/forms', formData)
+      axios.post(`${process.env.REACT_APP_API_BASE_URL}/forms/${i18n.language}`, formData)
         .then(res => res.data)
         .then(data => {
           console.log(data);
@@ -267,7 +267,7 @@ const Contact = () => {
         </div>
         <TextField
           error={!!errorInput.message}
-          helperText={msgError.message}
+          helperText={msgError.message || `${formData.message.length}/500`}
           className='input-contact'
           id='message'
           label='Message'
