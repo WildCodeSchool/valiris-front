@@ -11,7 +11,8 @@ const MapComponent = () => {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
       <Marker
-        position={position}>
+        position={position}
+      >
         <Popup>
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>
