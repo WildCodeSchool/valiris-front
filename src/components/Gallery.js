@@ -7,8 +7,6 @@ const Gallery = () => {
   // const { t } = useTranslation();
   const [apartments, setApartments] = useState();
 
-  
-
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_BASE_URL}/apartments`)
       .then(res => res.data)

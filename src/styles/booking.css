@@ -1,4 +1,36 @@
 .booking-calendar {
-    width: 70%;
+    width: 80% !important;
     margin: 100px auto;
 }
+
+.apartments-availability-btns {
+    width: 100%;
+    text-align: center;
+}
+
+/*/////////////// BUTTON //////////////*/
+.availability-btn {
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 5px; 
+    text-decoration: none;
+    color: #f7f1e9ff;
+    background-color: #329797;
+    width: 130px; 
+    border: none;
+    padding: 0.5em;
+    margin: 10px 5px;
+    transition: box-shadow 0.2s;
+  }
+  
+  .availability-btn:hover {
+    color: #329797;
+    background-color: white;
+    border-color: 4px #329797;
+    box-shadow: 0px 0px 0px 4px #329797;
+  }
+  
+  .availability-btn:focus {
+    outline: none;
+    border: none;
+  }
