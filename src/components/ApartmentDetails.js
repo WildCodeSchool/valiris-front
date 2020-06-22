@@ -8,17 +8,12 @@ import { useTranslation } from 'react-i18next';
 const ApartmentDetails = (props) => {
   const { i18n } = useTranslation();
   const [apartment, setApartment] = useState();
-  // const [availabilities, setAvailabilities] = useState();
 
   useEffect(() => {
     const id = props.match.params.id;
     axios.get(`${process.env.REACT_APP_API_BASE_URL}/apartments/${id}/${i18n.language}`)
       .then(res => res.data)
       .then(data => setApartment(data));
-
-    // await axios.get(`${process.env.REACT_APP_API_BASE_URL}/apartments/${id}/availabilities`)
-    //   .then(res => res.data)
-    //   .then(data => setAvailabilities(data));
   }, [i18n.language]);
 
   if (!apartment) {
