@@ -292,7 +292,7 @@ const Contact = () => {
       <h2>{t('contact-map-title.label')}</h2>
       <div className='find-us-container'>
         <MapComponent />
-        <div>
+        <div className='infos-container'>
           <ul>
             <li>{t('contact-adress.label')} : 470 Route de Saint Didier 69760 Limonest</li>
             <li>{t('contact-phone.label')} : XX.XX.XX.XX.XX</li>

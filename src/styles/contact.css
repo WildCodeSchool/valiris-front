@@ -67,7 +67,31 @@
   justify-content: space-around;
 }
 
+.infos-container {
+  padding: 20px;
+}
+
 @media screen and (min-width: 600px) {
+
+  .input-contact {
+    width: 60%;
+  }
+  
+  .date-picker {
+    width: 60%;
+  }
+
+  .date-input {
+    margin: 10px !important;
+  }
+
+  .find-us-container {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 850px) {
 
   .input-contact {
     width: 60%;
