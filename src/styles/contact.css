@@ -4,6 +4,12 @@
   margin: 30px 50px;
 }
 
+.contact-container > h2 {
+  text-align: center;
+  color: #329797;
+  margin: 30px 0;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -13,12 +19,6 @@
 .input-contact {
   margin: 10px 0 !important;
   width: 90%;
-}
-
-.input-submit {
-  width: 80px;
-  height: 40px;
-  cursor: pointer;
 }
 
 .date-picker {
@@ -33,6 +33,31 @@
   width: 90%;
 }
 
+.input-submit {
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px; 
+  text-decoration: none;
+  color: #fff;
+  background-color: #329797;
+  border: none;
+  transition: box-shadow 0.2s;
+}
+
+.input-submit:hover {
+  color: #329797;
+  background-color: #fff;
+  border-color: 4px #329797;
+  box-shadow: 0px 0px 0px 4px #329797;
+}
+
+.input-submit:focus {
+  outline: none;
+  border: none;
+}
+
 /*//////////////// Localisation /////////////////*/
 
 .find-us-container {
@@ -45,12 +70,12 @@
 @media screen and (min-width: 600px) {
 
   .input-contact {
-    width: 50%;
+    width: 60%;
   }
   
   .date-picker {
     flex-direction: row;
-    width: 50%;
+    width: 60%;
   }
 
   .date-input {
@@ -58,7 +83,8 @@
   }
 
   .find-us-container {
+    width: 60%;
+    margin: 0 auto;
     flex-direction: row;
-    justify-content: center;
   }
 }
