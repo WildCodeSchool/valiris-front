@@ -8,13 +8,11 @@
 @media screen and (min-width: 600px) {
   .leaflet-container {
     width: 100%;
-    height: 400px;
   }
 }
 
 @media screen and (min-width: 850px) {
   .leaflet-container {
     width: 50%;
-    height: 400px;
   }
 }
