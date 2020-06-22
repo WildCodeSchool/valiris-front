@@ -8,7 +8,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
-import Map from './Map';
+import MapComponent from './Map';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -287,7 +287,7 @@ const Contact = () => {
             {msgAlert}
           </Alert>
         </Snackbar>
-        <Map />
+        <MapComponent />
       </form>
     </div>
   );
