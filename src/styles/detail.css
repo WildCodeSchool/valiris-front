@@ -1,0 +1,30 @@
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+
+.thumbs {
+  text-align: center;
+}
+
+.thumb {
+  cursor: pointer;
+}
+
+.carousel-container-detail{
+  margin: 50px auto;
+}
+
+.carousel-slider{
+  margin: 0 auto !important;
+}
+
+.apartment-details {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.apartment-name {
+  margin: 1em;
+}

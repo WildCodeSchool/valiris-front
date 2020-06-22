@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import '../styles/detail.css';
 
 const ApartmentDetails = (props) => {
   const [apartment, setApartment] = useState();
@@ -24,32 +25,32 @@ const ApartmentDetails = (props) => {
   } else {
     console.log(apartment);
     return (
-      <>
+      <div className='details-container'>
+        <h2 className='apartment-name'>{apartment.name}</h2>
         <div className='carousel-container-detail'>
           <Carousel
-            autoPlay
             showArrows
             showStatus={false}
             infiniteLoop
             stopOnHover={false}
-            interval={6000}
             transitionTime={600}
             width='80%'
+            showIndicators = {false}
           >
             <div>
               <img src={apartment.main_picture_url} alt='Appartement' />
             </div>
             {apartment.url.map((url, index) => {
               return (
-                <div key={index}>
+                <div className='secondary-picture' key={index}>
                   <img src={url} alt='Appartment' />
                 </div>
               );
             })}
           </Carousel>
         </div>
-        <p>{apartment.details_fr}</p>
-      </>
+        <p className='apartment-details'>{apartment.details_fr}</p>
+      </div>
     );
   }
 };
