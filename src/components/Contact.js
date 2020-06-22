@@ -175,7 +175,7 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className='contact-container'>
       <h2>{t('contact-title.label')}</h2>
       <form className='contact-form' noValidate autoComplete='off' onSubmit={(e) => handleSubmit(e)}>
         <TextField
@@ -300,7 +300,6 @@ const Contact = () => {
           </ul>
           <p>{t('contact-access.label')} : </p>
         </div>
-
       </div>
     </div>
   );

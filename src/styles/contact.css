@@ -1,36 +1,64 @@
 /*//////////////// FORM /////////////////*/
 
+.contact-container {
+  margin: 30px 50px;
+}
+
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .input-contact {
-    margin: 10px !important;
-    width: 50%;
+  margin: 10px 0 !important;
+  width: 90%;
 }
 
 .input-submit {
-    width: 10%;
-    height: 30px;
-    cursor: pointer;
+  width: 80px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.date-picker {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .date-input {
-    margin: 20px !important;
+  margin: 10px 0 !important;
+  width: 90%;
 }
 
 /*//////////////// Localisation /////////////////*/
 
 .find-us-container {
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
 }
 
-@media screen and (max-width: 600px) {
-    .date-picker {
-        display: flex;
-        flex-direction: column;
-    }
+@media screen and (min-width: 600px) {
+
+  .input-contact {
+    width: 50%;
+  }
+  
+  .date-picker {
+    flex-direction: row;
+    width: 50%;
+  }
+
+  .date-input {
+    margin: 10px !important;
+  }
+
+  .find-us-container {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
