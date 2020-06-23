@@ -14,7 +14,7 @@ const MapComponent = () => {
         position={position}
       >
         <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
+          Valiris Résidence. <br /> 470 Route de Saint Didier 69760 Limonest.
         </Popup>
       </Marker>
     </Map>
