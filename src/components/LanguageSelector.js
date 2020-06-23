@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import localStorage from 'local-storage';
 import Switch from '@material-ui/core/Switch';
 import '../styles/language-selector.css';
 import { withStyles } from '@material-ui/core/styles';
@@ -33,7 +32,7 @@ const LanguageSelector = () => {
     const newLanguage = event.target.checked ? 'fr' : 'en';
     setToggled(!toggled);
     i18n.changeLanguage(newLanguage);
-    localStorage.setItem('lang', newLanguage);
+    localStorage.setItem('lang', newLanguage);/* eslint-disable-line */
   };
 
   return (

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import localStorage from 'local-storage';
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 const API = axios.create({
@@ -7,7 +6,7 @@ const API = axios.create({
 });
 
 const placeLanguageHeaders = req => {
-  const language = localStorage.getItem('lang');
+  const language = localStorage.getItem('lang');/* eslint-disable-line */
   if (language) {
     req.headers['accept-language'] = language;
   }
