@@ -131,7 +131,11 @@ const Contact = () => {
     setErrorForm(false);
     if (Object.values(errorInput).filter(e => e).length === 0) {
       setLoading(true);
+<<<<<<< HEAD
       axios.post(`${process.env.REACT_APP_API_BASE_URL}/forms/${i18n.language}`, formData)
+=======
+      axios.post(`${process.env.REACT_APP_API_BASE_URL}/forms`, formData)
+>>>>>>> dev
         .then(res => res.data)
         .then(data => {
           console.log(data);
@@ -280,7 +284,7 @@ const Contact = () => {
           rows={8}
           required
         />
-        {loading ? <CircularProgress style={{ width: '50px', height: '50px' }} /> : <input className='input-contact input-submit' type='submit' value={t('form-submit.label')} />}
+        {loading ? <CircularProgress style={{ width: '50px', height: '50px'}} /> : <input className='input-contact input-submit' type='submit' value={t('form-submit.label')} />}
         <Snackbar open={messageForm} autoHideDuration={6000} onClose={handleCloseMui}>
           <Alert onClose={handleCloseMui} severity={!errorForm ? 'success' : 'error'}>
             {msgAlert}

@@ -5,19 +5,18 @@ import '../styles/language-selector.css';
 import { withStyles } from '@material-ui/core/styles';
 import { orange } from '@material-ui/core/colors';
 
-
 const CustomSwitch = withStyles({
   switchBase: {
     color: orange[50],
     '&$checked': {
-      color: orange[50],
+      color: orange[50]
     },
     '&$checked + $track': {
-      backgroundColor: orange[50],
-    },
+      backgroundColor: orange[50]
+    }
   },
   checked: {},
-  track: {},
+  track: {}
 })(Switch);
 
 const LanguageSelector = () => {
@@ -32,7 +31,6 @@ const LanguageSelector = () => {
       i18n.changeLanguage('en');
     }
   };
-
 
   return (
     <div className='toggle-container'>

@@ -16,11 +16,11 @@ const Footer = () => {
           <li><NavLink to='/CGU' className='footer-link-item'>{t('navigation-terms.label')}</NavLink></li>
           <li><NavLink to='/FAQ' className='footer-link-item'>FAQ</NavLink></li>
         </ul>
-        <div className="icons-container">
+        <div className='icons-container'>
           <p className='footer-address'>470 Route de Saint Didier 69760 Limonest</p>
           <ul className='menu-footer-icons'>
-            <li ><a href="https://www.facebook.com/" className='facebook-icon' target="_blank"><FacebookIcon fontSize="large" /></a></li>
-            <li ><a href="https://www.youtube.com/" className='youtube-icon' target="_blank"><YoutubeIcon fontSize="large"/></a></li>
+            <li><a href='https://www.facebook.com/' className='facebook-icon' target='_blank'><FacebookIcon fontSize='large' /></a></li>
+            <li><a href='https://www.youtube.com/' className='youtube-icon' target='_blank'><YoutubeIcon fontSize='large' /></a></li>
           </ul>
         </div>
         <div className='logo-footer'>
