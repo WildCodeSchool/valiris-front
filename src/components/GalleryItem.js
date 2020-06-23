@@ -54,7 +54,7 @@ const theme = {
   }
 };
 
-const GalleryItem = ({ apartmentDetails: { id, name, title, main_picture_url } }) => {
+const GalleryItem = ({ apartmentDetails: { id, name, title, mainPictureUrl } }) => {
   const { t } = useTranslation();
   return (
     <MuiThemeProvider theme={createMuiTheme(theme)}>
@@ -62,7 +62,7 @@ const GalleryItem = ({ apartmentDetails: { id, name, title, main_picture_url } }
         <Card className='MuiEngagementCard--01'>
           <CardMedia
             className='MuiCardMedia-root'
-            image={main_picture_url}
+            image={mainPictureUrl}
           />
           <CardContent className='MuiCardContent-root card-content'>
             <Typography

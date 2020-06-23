@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import axios from 'axios';
 import GalleryItem from './GalleryItem';
+import API from '../API';
 
 const Gallery = () => {
   const { i18n } = useTranslation();
   const [apartments, setApartments] = useState();
 
-  
-
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_BASE_URL}/apartments/${i18n.language}`)
+    API.get(`/apartments/`)
       .then(res => res.data)
       .then(data => setApartments(data));
   }, [i18n.language]);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import API from '../API';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../styles/detail.css';
@@ -11,10 +11,10 @@ const ApartmentDetails = (props) => {
 
   useEffect(() => {
     const id = props.match.params.id;
-    axios.get(`${process.env.REACT_APP_API_BASE_URL}/apartments/${id}/${i18n.language}`)
+    API.get(`/apartments/${id}`)
       .then(res => res.data)
       .then(data => setApartment(data));
-  }, [i18n.language]);
+  }, [i18n.language, props.match.params.id]);
 
   if (!apartment) {
     return <p>loading...</p>;
@@ -34,7 +34,7 @@ const ApartmentDetails = (props) => {
             showIndicators = {false}
           >
             <div>
-              <img src={apartment.main_picture_url} alt='Appartement' />
+              <img src={apartment.mainPictureUrl} alt='Appartement' />
             </div>
             {apartment.url.map((url, index) => {
               return (

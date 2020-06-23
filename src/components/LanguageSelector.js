@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Switch from '@material-ui/core/Switch';
 import '../styles/language-selector.css';
@@ -21,18 +21,20 @@ const CustomSwitch = withStyles({
 })(Switch);
 
 const LanguageSelector = () => {
-  const [toggled, setToggled] = useState(true);
   const { i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+  const [toggled, setToggled] = useState(currentLanguage === 'fr');
+  
+  useEffect(() => {
+    setToggled(currentLanguage === 'fr');
+  }, [currentLanguage])
 
   const changeLanguage = (event) => {
+    const newLanguage = event.target.checked ? 'fr' : 'en';
     setToggled(!toggled);
-    if (event.target.checked) {
-      i18n.changeLanguage('fr');
-    } else {
-      i18n.changeLanguage('en');
-    }
+    i18n.changeLanguage(newLanguage);
+    localStorage.setItem('lang', newLanguage);
   };
-
 
   return (
     <div className='toggle-container'>

@@ -6,11 +6,11 @@ import '../styles/contact.css';
 import '../styles/language-selector.css';
 import 'react-datepicker/dist/react-datepicker.css';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import axios from 'axios';
+import API from '../API';
 import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
-  const { t , i18n } = useTranslation();
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
@@ -131,7 +131,7 @@ const Contact = () => {
     setErrorForm(false);
     if (Object.values(errorInput).filter(e => e).length === 0) {
       setLoading(true);
-      axios.post(`${process.env.REACT_APP_API_BASE_URL}/forms/${i18n.language}`, formData)
+      API.post(`/contacts`, formData)
         .then(res => res.data)
         .then(data => {
           console.log(data);
