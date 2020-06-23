@@ -132,7 +132,7 @@ const Contact = () => {
     setErrorForm(false);
     if (Object.values(errorInput).filter(e => e).length === 0) {
       setLoading(true);
-      API.post(`/contacts`, formData)
+      API.post('/contacts', formData)
         .then(res => res.data)
         .then(data => {
           console.log(data);

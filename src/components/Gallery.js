@@ -8,7 +8,7 @@ const Gallery = () => {
   const [apartments, setApartments] = useState();
 
   useEffect(() => {
-    API.get(`/apartments/`)
+    API.get('/apartments/')
       .then(res => res.data)
       .then(data => setApartments(data));
   }, [i18n.language]);
