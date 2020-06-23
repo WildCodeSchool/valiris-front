@@ -31,7 +31,7 @@ const ApartmentDetails = (props) => {
             stopOnHover={false}
             transitionTime={600}
             width='80%'
-            showIndicators = {false}
+            showIndicators={false}
           >
             <div>
               <img src={apartment.mainPictureUrl} alt='Appartement' />

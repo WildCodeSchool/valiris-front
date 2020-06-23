@@ -8,6 +8,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import API from '../API';
 import { useTranslation } from 'react-i18next';
+import MapComponent from './Map';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -174,7 +175,8 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className='contact-container'>
+      <h2>{t('contact-title.label')}</h2>
       <form className='contact-form' noValidate autoComplete='off' onSubmit={(e) => handleSubmit(e)}>
         <TextField
           className='input-contact'
@@ -287,6 +289,18 @@ const Contact = () => {
           </Alert>
         </Snackbar>
       </form>
+      <h2>{t('contact-map-title.label')}</h2>
+      <div className='find-us-container'>
+        <MapComponent />
+        <div className='infos-container'>
+          <ul>
+            <li>{t('contact-adress.label')} : 470 Route de Saint Didier 69760 Limonest</li>
+            <li>{t('contact-phone.label')} : XX.XX.XX.XX.XX</li>
+            <li>Email : xxxxxx@xxxxx.fr</li>
+          </ul>
+          <p>{t('contact-access.label')} : </p>
+        </div>
+      </div>
     </div>
   );
 };
