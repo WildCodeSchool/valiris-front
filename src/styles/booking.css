@@ -1,14 +1,50 @@
+.booking-container {
+  width: 60%;
+  margin: 50px auto;
+}
+
+.booking-title {
+  font-family: 'Raleway';
+  font-weight: 800;
+  font-size: 1.4em;
+  color: #329797;
+}
+
+.booking-text {
+  margin: 30px auto;
+  font-family: 'Montserrat';
+  line-height: 2em;
+}
+
 .booking-calendar {
     width: 80% !important;
     margin: 100px auto;
 }
+
+.fc-toolbar-title {
+  color: #329797
+}
+
+.fc .fc-button-primary {
+  color: #f7f1e9ff;
+  background-color: #329797;
+  border-color: #f7f1e9ff;
+  transition: box-color 0.2s;
+}
+
+.fc .fc-button-primary:hover {
+  color: #f7f1e9ff;
+  background-color: #329797;
+  border-color: #329797;
+}
+
+/*/////////////// BUTTON //////////////*/
 
 .apartments-availability-btns {
     width: 100%;
     text-align: center;
 }
 
-/*/////////////// BUTTON //////////////*/
 .availability-btn {
     cursor: pointer;
     font-size: 12px;
