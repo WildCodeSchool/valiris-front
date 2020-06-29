@@ -6,8 +6,9 @@ import '../styles/contact.css';
 import '../styles/language-selector.css';
 import 'react-datepicker/dist/react-datepicker.css';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import axios from 'axios';
+import API from '../API';
 import { useTranslation } from 'react-i18next';
+import MapComponent from './Map';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -31,6 +32,7 @@ const Contact = () => {
     email: false,
     message: false
   });
+
   const [msgError, setMsgError] = useState({
     firstname: '',
     lastname: '',
@@ -130,7 +132,7 @@ const Contact = () => {
     setErrorForm(false);
     if (Object.values(errorInput).filter(e => e).length === 0) {
       setLoading(true);
-      axios.post(`${process.env.REACT_APP_API_BASE_URL}/forms`, formData)
+      API.post('/contacts', formData)
         .then(res => res.data)
         .then(data => {
           console.log(data);
@@ -173,7 +175,8 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className='contact-container'>
+      <h2>{t('contact-title.label')}</h2>
       <form className='contact-form' noValidate autoComplete='off' onSubmit={(e) => handleSubmit(e)}>
         <TextField
           className='input-contact'
@@ -266,7 +269,7 @@ const Contact = () => {
         </div>
         <TextField
           error={!!errorInput.message}
-          helperText={msgError.message}
+          helperText={msgError.message || `${formData.message.length}/500`}
           className='input-contact'
           id='message'
           label='Message'
@@ -279,13 +282,25 @@ const Contact = () => {
           rows={8}
           required
         />
-        {loading ? <CircularProgress style={{ width: '50px', height: '50px', marginTop: '20px'}} /> : <input className='input-contact input-submit' type='submit' value={t('form-submit.label')} />}
+        {loading ? <CircularProgress style={{ width: '50px', height: '50px' }} /> : <input className='input-contact input-submit' type='submit' value={t('form-submit.label')} />}
         <Snackbar open={messageForm} autoHideDuration={6000} onClose={handleCloseMui}>
           <Alert onClose={handleCloseMui} severity={!errorForm ? 'success' : 'error'}>
             {msgAlert}
           </Alert>
         </Snackbar>
       </form>
+      <h2>{t('contact-map-title.label')}</h2>
+      <div className='find-us-container'>
+        <MapComponent />
+        <div className='infos-container'>
+          <ul>
+            <li>{t('contact-adress.label')} : 470 Route de Saint Didier 69760 Limonest</li>
+            <li>{t('contact-phone.label')} : XX.XX.XX.XX.XX</li>
+            <li>Email : xxxxxx@xxxxx.fr</li>
+          </ul>
+          <p>{t('contact-access.label')} : </p>
+        </div>
+      </div>
     </div>
   );
 };

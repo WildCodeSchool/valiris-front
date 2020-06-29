@@ -25,11 +25,46 @@ footer {
   text-align: center;
 }
 
+.footer-address {
+  margin: 20px;
+  color: #fff;
+}
+
+.facebook-icon{
+  color :rgb(6, 114, 230);
+}
+
+.youtube-icon{
+  color: rgb(255, 3, 11);
+}
+
+.facebook-icon,
+.youtube-icon {
+  padding: 0 20px;
+}
+
 .footer-link-item {
     color: #fff;
     text-decoration: none;
 }
 
+.footer-link-item.active,
+.footer-link-item:hover {
+  border-bottom: 2px solid;
+  padding: 4px 0; 
+}
+
+.menu-footer-icons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons-container{
+  justify-content: center;
+  align-items: center;
+}
 @media screen and (min-width: 850px) {
   .nav-footer {
     flex-direction: row;
@@ -43,5 +78,8 @@ footer {
   }
   .logo-footer {
     margin-right: 30px;;
+  }
+  .menu-footer-icons{
+    flex-direction: row;
   }
 }

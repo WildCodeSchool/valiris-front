@@ -1,4 +1,9 @@
 {
+  "contact-access.label": "Access",
+  "contact-phone.label": "Phone",
+  "contact-adress.label": "Adress",
+  "contact-title.label": "Contact us",
+  "contact-map-title.label": "Find us",
   "form-email-error.label": "Invalid email",
   "form-phone-error.label" : "Invalid phone",
   "form-message-length-error.label" : "The message must not exceed 500 characters",
@@ -15,6 +20,7 @@
   "form-arrival-date.label": "Arrival date",
   "form-leaving-date.label": "Leaving date",
   "form-submit.label": "Submit",
+  "gallery-more-button.label": "Read more",
   "navigation-about.label": "About",
   "navigation-gallery.label": "Gallery",
   "navigation-home.label": "Home",

@@ -1,4 +1,9 @@
 {
+  "contact-access.label": "Accès",
+  "contact-phone.label": "Téléphone",
+  "contact-adress.label": "Adresse",
+  "contact-title.label": "Contactez-nous",
+  "contact-map-title.label": "Nous trouver",
   "form-email-error.label": "Email invalide",
   "form-phone-error.label" : "Téléphone invalide",
   "form-message-length-error.label" : "Le message ne doit pas dépasser 500 caractères",
@@ -15,6 +20,7 @@
   "form-arrival-date.label": "Date d'arrivée",
   "form-leaving-date.label": "Date de départ",
   "form-submit.label": "Envoyer",
+  "gallery-more-button.label": "Détails",
   "navigation-about.label": "A propos",
   "navigation-gallery.label": "Galerie",
   "navigation-home.label": "Accueil",
