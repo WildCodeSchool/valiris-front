@@ -33,7 +33,7 @@
 
 .nav-menu .menuItems li a {
     text-decoration: none;
-    font-family: 'Nunito';
+    font-family: 'Raleway';
     color: #329797;
     font-weight: bold;
     font-size: 24px;
@@ -78,41 +78,49 @@
 
 /*////////////////////////////////////////////////////*/
 @media screen and (min-width: 850px) {
+
     .mobile-menu {
         display: none;
     }
+
     .desktop-menu {
       display: flex;
       align-items: center;
       justify-content: center;
     }
+    
     .desktop-menu ul {
       display: flex;
-      list-style: none;
       align-items: center;
       justify-content: center;
       height: 85px;
     }
+    
     .desktop-menu ul li {
       padding: 0 1.5em; 
     }
+
     .desktop-menu ul li:last-child {
       padding-right: 0;
     }
+
     .menu-item-desktop {
       color: #fff ;
       font-size: 20px;
       text-decoration: none;
-      transition: 0.3s ease;
+      transition: all 0.1s ease;
     }
+
     .menu-item-desktop:hover {
       border-bottom: 2px solid #f7f1e9ff;
       padding: 4px 0; 
     }
+
     .menu-item-desktop.active {
       border-bottom: 2px solid;
       padding: 4px 0; 
     }
+    
     .contact-button {
       cursor: pointer;
       font-size: 20px;
