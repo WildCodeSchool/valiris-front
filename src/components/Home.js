@@ -29,7 +29,7 @@ const Home = () => {
       </Carousel>
       <div className='home-content'>
         <h2 className='home-title'>Bienvenue chez Valiris Résidence</h2>
-        <hr/>
+        <hr />
         <p className='catch-phrase'>
           Dans un cadre naturel préservé, à la naissance du vallon de Rochecardon, profitez d'un appartement 2 pièces, de 36 à 40 m², meublé, contemporain et intégralement équipé à neuf, dans un double corps de bâtiment en pierre de taille.
         </p>
