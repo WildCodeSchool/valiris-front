@@ -150,7 +150,7 @@ const Contact = () => {
     }
   };
 
-  function Alert(props) {
+  function Alert (props) {
     return <MuiAlert elevation={6} variant='filled' {...props} />;
   }
 

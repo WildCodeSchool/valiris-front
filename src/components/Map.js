@@ -5,7 +5,7 @@ import '../styles/Map.css';
 const MapComponent = () => {
   const position = [45.8322560, 4.7753658];
   return (
-      <Map center={position} zoom={14}>
+    <Map center={position} zoom={14}>
       <TileLayer
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
