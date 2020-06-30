@@ -71,7 +71,7 @@ const Contact = () => {
     API.get('/apartments')
       .then(res => res.data)
       .then(data => setApartments(data.map(apartment => {
-        return {name: apartment.name, id: apartment.id}
+        return { name: apartment.name, id: apartment.id };
       })));
   }, []);
 
