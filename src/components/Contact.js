@@ -150,7 +150,7 @@ const Contact = () => {
     }
   };
 
-  function Alert (props) {
+  function Alert(props) {
     return <MuiAlert elevation={6} variant='filled' {...props} />;
   }
 
@@ -376,11 +376,24 @@ const Contact = () => {
         <MapComponent />
         <div className='infos-container'>
           <ul>
-            <li>{t('contact-adress.label')} : 470 Route de Saint Didier 69760 Limonest</li>
-            <li>{t('contact-phone.label')} : XX.XX.XX.XX.XX</li>
-            <li>Email : xxxxxx@xxxxx.fr</li>
+            <li><span className='category'>{t('contact-adress.label')}</span> : 470 Route de Saint Didier 69760 Limonest</li>
+            <hr className='separator' />
+            <li><span className='category'>{t('contact-phone.label')}</span> : XX.XX.XX.XX.XX</li>
+            <hr className='separator' />
+            <li><span className='category'>Email</span> : xxxxxx@xxxxx.fr</li>
+            <hr className='separator' />
           </ul>
-          <p>{t('contact-access.label')} : </p>
+          <div className='access'><span className='category'>{t('contact-access.label')}</span> :
+            <p>En voiture : Valiris est à 14 kms de Bellecour par Autoroute A6, sortie Limonest.
+              Compter 1/2 heure environ selon les conditions de circulation.
+            </p>
+            <p>En transport en commun :
+              Métro ligne D, direction Gare de Vaise, puis bus n° 21 direction Limonest, descendre à l'arrêt "La Croix" (20 minutes).
+              Rejoindre la résidence (5 minutes à pied).
+              Consultez les horaires sur le site TCL (lien à insérer : www.tcl.fr) ou sur l'application TCL
+            </p>
+          </div>
+
         </div>
       </div>
     </div>
