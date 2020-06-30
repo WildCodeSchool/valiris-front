@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import API from '../API';
 
 const Calendar = () => {
   const { i18n } = useTranslation();
@@ -17,13 +17,13 @@ const Calendar = () => {
   });
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_BASE_URL}/apartments`)
+    API.get('/apartments')
       .then(res => res.data)
       .then(data => setApartments(data));
   }, []);
 
   const handleClick = (id) => {
-    axios.get(`${process.env.REACT_APP_API_BASE_URL}/apartments/${id}/availabilities`)
+    API.get(`/apartments/${id}/availabilities`)
       .then(res => res.data)
       .then(data => {
         setAvailabilities(data.map(d => {

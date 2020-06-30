@@ -10,6 +10,32 @@
   margin: 30px 0;
 }
 
+.toggle-form-container {
+  margin: 0 auto !important;
+  width: 60% !important;
+}
+
+.toggle-form-item {
+  width: 100% !important;
+}
+
+.toggle-form-container p {
+  color: #329797;
+}
+
+.btn-toggle-booking {
+  width: 50%;
+}
+
+.btn-toggle-booking:hover,
+.Mui-selected {
+  background-color: #329797 !important;
+}
+
+.Mui-selected p {
+  color: #fff !important;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
