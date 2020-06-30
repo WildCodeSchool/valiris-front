@@ -39,8 +39,6 @@ const Calendar = () => {
       });
   };
 
-
-
   return (
     <div className='booking-calendar'>
       <FullCalendar
@@ -53,7 +51,7 @@ const Calendar = () => {
           right: 'prev,next'
         }}
         locale={i18n.language}
-        height={'auto'}
+        height='auto'
       />
       <div className='legend-container'>
         <span className='avalaible'>Disponible</span>
