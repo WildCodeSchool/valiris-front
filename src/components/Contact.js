@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import { TextField } from '@material-ui/core';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
@@ -9,8 +10,22 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import API from '../API';
 import { useTranslation } from 'react-i18next';
 import MapComponent from './Map';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
+import FormControl from '@material-ui/core/FormControl';
+
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+}));
 
 const Contact = () => {
+  const classes = useStyles();
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
     firstname: '',
@@ -19,7 +34,8 @@ const Contact = () => {
     email: '',
     message: '',
     startDate: '',
-    endDate: ''
+    endDate: '',
+    apartment: ''
   });
   const [messageForm, setMessageForm] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -41,6 +57,14 @@ const Contact = () => {
     message: ''
   });
   const [msgAlert, setMsgAlert] = useState('');
+
+  const [apartments, setApartments] = useState([]);
+
+  useEffect(() => {
+    API.get('/apartments')
+      .then(res => res.data)
+      .then(data => setApartments(data.map(apartment => apartment.name)));
+  }, []);
 
   const submitValidation = () => {
     const { firstname, lastname, phone, email, message } = formData;
@@ -267,6 +291,24 @@ const Contact = () => {
             }}
           />
         </div>
+        <FormControl variant="outlined" className={`${classes.formControl} input-contact`}>
+          <InputLabel htmlFor="outlined-age-native-simple">{t('form-apartment.label')}</InputLabel>
+            <Select
+              native
+              value={formData.apartment}
+              onChange={(e) => handleChangeForm(e)}
+              name='apartment'
+              label={t('form-apartment.label')}
+              inputProps={{
+                id: 'outlined-age-native-simple',
+              }}
+            >
+              <option value=''></option>
+              {apartments.map((apartment, index) => {
+                return <option key={index} value={apartment}>{apartment}</option>
+              })}
+            </Select>
+            </FormControl>
         <TextField
           error={!!errorInput.message}
           helperText={msgError.message || `${formData.message.length}/500`}
