@@ -1,5 +1,6 @@
 .aboutus-container {
     background: #F5F5DC;
+    font-family: 'Montserrat';
 }
 
 .first-article-aboutus, 
@@ -8,6 +9,7 @@
 }
 
 .aboutus-container h2 {
+  font-family: 'Raleway';
     text-align: center;
     margin-bottom: 40px;
     color: #329797;
