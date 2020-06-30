@@ -13,19 +13,26 @@ import MapComponent from './Map';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import FormControl from '@material-ui/core/FormControl';
+import Grid from "@material-ui/core/Grid";
+import ToggleButton from "@material-ui/lab/ToggleButton";
+import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: 120
   },
   selectEmpty: {
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(2)
   },
+  toggleContainer: {
+    margin: theme.spacing(2, 0)
+  }
 }));
 
 const Contact = () => {
   const classes = useStyles();
+  const [alignment, setAlignment] = useState("info");
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
     firstname: '',
@@ -65,6 +72,12 @@ const Contact = () => {
       .then(res => res.data)
       .then(data => setApartments(data.map(apartment => apartment.name)));
   }, []);
+
+  const handleAlignment = (event, newAlignment) => {
+    if (newAlignment !== null) {
+      setAlignment(newAlignment);
+    }
+  };
 
   const submitValidation = () => {
     const { firstname, lastname, phone, email, message } = formData;
@@ -201,6 +214,26 @@ const Contact = () => {
   return (
     <div className='contact-container'>
       <h2>{t('contact-title.label')}</h2>
+      <Grid container spacing={2} className='toggle-form-container'>
+      <Grid className='toggle-form-item'>
+        <div className={classes.toggleContainer}>
+          <ToggleButtonGroup
+            value={alignment}
+            exclusive
+            onChange={handleAlignment}
+            aria-label="text alignment"
+            style={{width: '100%'}}
+          >
+            <ToggleButton value="info" aria-label="get-info" className='btn-toggle-booking'>
+              <p>Demande d'infos</p>
+            </ToggleButton>
+            <ToggleButton value="booking" aria-label="go-booking" className='btn-toggle-booking'>
+              <p>Réservation</p>
+            </ToggleButton>
+          </ToggleButtonGroup>
+        </div>
+      </Grid>
+    </Grid>
       <form className='contact-form' noValidate autoComplete='off' onSubmit={(e) => handleSubmit(e)}>
         <TextField
           className='input-contact'
@@ -255,6 +288,9 @@ const Contact = () => {
           type='mail'
           required
         />
+
+        {alignment === 'booking' && 
+        <>
         <div className='date-picker'>
           <TextField
             className='date-input'
@@ -291,24 +327,25 @@ const Contact = () => {
             }}
           />
         </div>
-        <FormControl variant="outlined" className={`${classes.formControl} input-contact`}>
-          <InputLabel htmlFor="outlined-age-native-simple">{t('form-apartment.label')}</InputLabel>
-            <Select
-              native
-              value={formData.apartment}
-              onChange={(e) => handleChangeForm(e)}
-              name='apartment'
-              label={t('form-apartment.label')}
-              inputProps={{
-                id: 'outlined-age-native-simple',
-              }}
-            >
-              <option value=''></option>
-              {apartments.map((apartment, index) => {
-                return <option key={index} value={apartment}>{apartment}</option>
-              })}
-            </Select>
-            </FormControl>
+        <FormControl variant='outlined' className={`${classes.formControl} input-contact`}>
+          <InputLabel htmlFor='outlined-age-native-simple'>{t('form-apartment.label')}</InputLabel>
+          <Select
+            native
+            value={formData.apartment}
+            onChange={(e) => handleChangeForm(e)}
+            name='apartment'
+            label={t('form-apartment.label')}
+            inputProps={{
+              id: 'outlined-age-native-simple'
+            }}
+          >
+            <option value='' />
+            {apartments.map((apartment, index) => {
+              return <option key={index} value={apartment}>{apartment}</option>;
+            })}
+          </Select>
+        </FormControl>
+        </>}
         <TextField
           error={!!errorInput.message}
           helperText={msgError.message || `${formData.message.length}/500`}
