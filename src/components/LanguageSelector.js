@@ -23,7 +23,7 @@ const LanguageSelector = () => {
       <p>EN</p>
       <label>
         <div className='toggle'>
-          <input className='toggle-state' type='checkbox' value={toggled} onChange={changeLanguage} />
+          <input className='toggle-state' type='checkbox' checked={toggled} onChange={changeLanguage} />
           <div className='indicator' />
         </div>
       </label>
