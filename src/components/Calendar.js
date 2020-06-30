@@ -33,7 +33,7 @@ const Calendar = () => {
             start: d.starting_date,
             end: d.ending_date,
             color: '#329797',
-            display: 'background',
+            display: 'background'
           };
         }));
       });
@@ -62,4 +62,3 @@ const Calendar = () => {
 };
 
 export default Calendar;
-
