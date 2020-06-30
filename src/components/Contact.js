@@ -384,7 +384,7 @@ const Contact = () => {
             <li><span className='category-name'>Email : </span>xxxxxx@xxxxx.fr</li>
             <hr className='separator' />
           </ul>
-          <div className='access'><span className='category-name'>{t('contact-access.label')} : </span> 
+          <div className='access'><span className='category-name'>{t('contact-access.label')} : </span>
             <p><strong>En voiture : </strong>
               Valiris est à 14 kms de Bellecour par Autoroute A6, sortie Limonest.
               Compter 1/2 heure environ selon les conditions de circulation.
