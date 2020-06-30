@@ -134,13 +134,13 @@
       border: none;
       padding: 0.5em;
       margin: 0;
-      transition: box-shadow 0.2s;
+      transition: box-shadow 0.4s;
     }
     .contact-button:hover {
       color: #f7f1e9ff;
       background-color: #329797;  
-      border-color: 4px #f7f1e9ff;
-      box-shadow: 0px 0px 0px 4px #f7f1e9ff;
+      border-color: 2px #f7f1e9ff;
+      box-shadow: 0px 0px 0px 3px #f7f1e9ff;
     }
     
     .contact-button:focus {
