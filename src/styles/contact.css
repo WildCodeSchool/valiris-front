@@ -5,6 +5,12 @@
   font-family: 'Montserrat';
 }
 
+.contact-container > p {
+  font-family: 'Montserrat';
+  text-align: center;
+  margin: 10px 0;
+}
+
 .contact-container > h2 {
   font-family: 'Raleway';
   text-align: center;
@@ -102,15 +108,21 @@
 
 .infos-container {
   width: 100%;
-  padding: 0 20px;
   margin: 20px;
   border-radius: 5px;
   border: solid 2px rgba(50, 151, 151, 0.5);
 }
 
+.infos-container ul {
+  padding: 20px;
+}
+
+.access {
+  padding: 0 20px;
+}
+
 .infos-container ul li,
-.access,
-.access p{
+.access p {
   margin: 20px auto;
 }
 
@@ -119,11 +131,18 @@
   border: 0.5px solid rgba(50, 151, 151, 0.5);
 }
 
-.category {
+.category-name {
   font-family: 'Raleway';
+  font-size: 1.1em;
   font-weight: 700;
   color: #329797;
-} 
+}
+
+.tcl-link {
+  text-decoration: none;
+  color: #329797;
+  font-weight: 700;
+}
 
 @media screen and (min-width: 600px) {
 
@@ -169,5 +188,9 @@
     width: 80%;
     margin: 0 auto;
     flex-direction: row;
+  }
+
+  .infos-container {
+    margin: 0 20px;
   }
 }
