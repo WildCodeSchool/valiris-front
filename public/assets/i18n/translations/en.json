@@ -4,6 +4,7 @@
   "contact-adress.label": "Adress",
   "contact-title.label": "Contact us",
   "contact-map-title.label": "Find us",
+  "form-apartment.label": "Apartment",
   "form-email-error.label": "Invalid email",
   "form-phone-error.label" : "Invalid phone",
   "form-message-length-error.label" : "The message must not exceed 500 characters",

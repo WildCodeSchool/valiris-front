@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import { TextField } from '@material-ui/core';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
@@ -9,8 +10,29 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import API from '../API';
 import { useTranslation } from 'react-i18next';
 import MapComponent from './Map';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
+import FormControl from '@material-ui/core/FormControl';
+import Grid from '@material-ui/core/Grid';
+import ToggleButton from '@material-ui/lab/ToggleButton';
+import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2)
+  },
+  toggleContainer: {
+    margin: theme.spacing(2, 0)
+  }
+}));
 
 const Contact = () => {
+  const classes = useStyles();
+  const [alignment, setAlignment] = useState('info');
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
     firstname: '',
@@ -19,7 +41,8 @@ const Contact = () => {
     email: '',
     message: '',
     startDate: '',
-    endDate: ''
+    endDate: '',
+    apartment: ''
   });
   const [messageForm, setMessageForm] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -41,6 +64,22 @@ const Contact = () => {
     message: ''
   });
   const [msgAlert, setMsgAlert] = useState('');
+
+  const [apartments, setApartments] = useState([]);
+
+  useEffect(() => {
+    API.get('/apartments')
+      .then(res => res.data)
+      .then(data => setApartments(data.map(apartment => {
+        return { name: apartment.name, id: apartment.id };
+      })));
+  }, []);
+
+  const handleAlignment = (event, newAlignment) => {
+    if (newAlignment !== null) {
+      setAlignment(newAlignment);
+    }
+  };
 
   const submitValidation = () => {
     const { firstname, lastname, phone, email, message } = formData;
@@ -143,7 +182,8 @@ const Contact = () => {
             email: '',
             message: '',
             startDate: '',
-            endDate: ''
+            endDate: '',
+            apartment: ''
           });
           setMessageForm(true);
           setLoading(false);
@@ -177,6 +217,26 @@ const Contact = () => {
   return (
     <div className='contact-container'>
       <h2>{t('contact-title.label')}</h2>
+      <Grid container spacing={2} className='toggle-form-container'>
+        <Grid className='toggle-form-item'>
+          <div className={classes.toggleContainer}>
+            <ToggleButtonGroup
+              value={alignment}
+              exclusive
+              onChange={handleAlignment}
+              aria-label='text alignment'
+              style={{ width: '100%' }}
+            >
+              <ToggleButton value='info' aria-label='get-info' className='btn-toggle-booking'>
+                <p>Demande d'infos</p>
+              </ToggleButton>
+              <ToggleButton value='booking' aria-label='go-booking' className='btn-toggle-booking'>
+                <p>Réservation</p>
+              </ToggleButton>
+            </ToggleButtonGroup>
+          </div>
+        </Grid>
+      </Grid>
       <form className='contact-form' noValidate autoComplete='off' onSubmit={(e) => handleSubmit(e)}>
         <TextField
           className='input-contact'
@@ -231,42 +291,64 @@ const Contact = () => {
           type='mail'
           required
         />
-        <div className='date-picker'>
-          <TextField
-            className='date-input'
-            id={t('form-arrival-date.label')}
-            label={t('form-arrival-date.label')}
-            type='date'
-            variant='outlined'
-            name='startDate'
-            value={formData.startDate}
-            onChange={(e) => handleChangeForm(e)}
-            InputLabelProps={{
-              shrink: true
-            }}
-            InputProps={{
-              inputProps: { min: getFullDate() }
-            }}
-          />
-          <TextField
-            className='date-input'
-            id={t('form-leaving-date.label')}
-            label={t('form-leaving-date.label')}
-            type='date'
-            variant='outlined'
-            name='endDate'
-            onChange={(e) => handleChangeForm(e)}
-            value={formData.endDate}
-            InputLabelProps={{
-              shrink: true
-            }}
-            InputProps={{
-              inputProps: formData.startDate
-                ? { min: formData.startDate }
-                : { min: getFullDate() }
-            }}
-          />
-        </div>
+
+        {alignment === 'booking' &&
+          <>
+            <div className='date-picker'>
+              <TextField
+                className='date-input'
+                id={t('form-arrival-date.label')}
+                label={t('form-arrival-date.label')}
+                type='date'
+                variant='outlined'
+                name='startDate'
+                value={formData.startDate}
+                onChange={(e) => handleChangeForm(e)}
+                InputLabelProps={{
+                  shrink: true
+                }}
+                InputProps={{
+                  inputProps: { min: getFullDate() }
+                }}
+              />
+              <TextField
+                className='date-input'
+                id={t('form-leaving-date.label')}
+                label={t('form-leaving-date.label')}
+                type='date'
+                variant='outlined'
+                name='endDate'
+                onChange={(e) => handleChangeForm(e)}
+                value={formData.endDate}
+                InputLabelProps={{
+                  shrink: true
+                }}
+                InputProps={{
+                  inputProps: formData.startDate
+                    ? { min: formData.startDate }
+                    : { min: getFullDate() }
+                }}
+              />
+            </div>
+            <FormControl variant='outlined' className={`${classes.formControl} input-contact`}>
+              <InputLabel htmlFor='outlined-age-native-simple'>{t('form-apartment.label')}</InputLabel>
+              <Select
+                native
+                value={formData.apartment}
+                onChange={(e) => handleChangeForm(e)}
+                name='apartment'
+                label={t('form-apartment.label')}
+                inputProps={{
+                  id: 'outlined-age-native-simple'
+                }}
+              >
+                <option value='' />
+                {apartments.map((apartment, index) => {
+                  return <option key={index} value={apartment.id}>{apartment.name}</option>;
+                })}
+              </Select>
+            </FormControl>
+          </>}
         <TextField
           error={!!errorInput.message}
           helperText={msgError.message || `${formData.message.length}/500`}
