@@ -33,6 +33,14 @@
   text-align: justify;
 }
 
+.infos-text li {
+  margin: 10px;
+  padding: 15px;
+  border: solid 1px whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.05), 0 0.2rem 0.4rem rgba(75,0,0,0.05);
+}
+
 .booking-calendar {
     width: 80% !important;
     margin: 40px auto;
@@ -130,10 +138,10 @@
   }
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 1200px) {
   .booking-infos {
     margin: 20px auto;
-    width: 80%;
+    width: 100%;
     flex-direction: row;
     align-items: center;
   }
