@@ -4,6 +4,13 @@
   align-content: space-around;
 }
 
+.apartment-name {
+  font-weight: 700;
+  text-align: center;
+  color: #329797;
+  margin: 1em;
+}
+
 .thumbs {
   text-align: center;
 }
@@ -12,8 +19,8 @@
   cursor: pointer;
 }
 
-.carousel-container-detail{
-  margin: 50px auto;
+.carousel .thumb.selected, .carousel .thumb:hover {
+  border: 3px solid #329797;
 }
 
 .carousel-slider{
@@ -21,10 +28,11 @@
 }
 
 .apartment-details {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-}
-.apartment-name {
-  margin: 1em;
+  width: 60%;
+  margin: 25px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0.25rem 0.25rem 0.4rem rgba(0,0,0,0.05), 0 0.25rem 1.135rem rgba(50,151,151,0.4);
+  text-align: justify;
+  line-height: 2rem;
 }

@@ -174,7 +174,6 @@ const Contact = () => {
       API.post('/contacts', formData)
         .then(res => res.data)
         .then(data => {
-          console.log(data);
           setFormData({
             firstname: '',
             lastname: '',
