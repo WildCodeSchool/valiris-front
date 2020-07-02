@@ -18,6 +18,7 @@ const Gallery = () => {
   } else {
     return (
       <div className='gallery-container'>
+        {console.log(apartments)}
         {apartments.map(apartment => {
           return <GalleryItem key={apartment.id} apartmentDetails={apartment} />;
         })}
