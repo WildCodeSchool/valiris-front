@@ -32,14 +32,15 @@ const Calendar = () => {
             title: d.name,
             start: d.starting_date,
             end: d.ending_date,
-            color: '#329797'
+            color: '#329797',
+            display: 'background'
           };
         }));
       });
   };
 
   return (
-    <div className='booking-calendar' style={{ width: '70%' }}>
+    <div className='booking-calendar'>
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView='dayGridMonth'
@@ -50,10 +51,15 @@ const Calendar = () => {
           right: 'prev,next'
         }}
         locale={i18n.language}
+        height='auto'
       />
+      <div className='legend-container'>
+        <span className='avalaible'>Disponible</span>
+        <span className='rent'>Loué</span>
+      </div>
       <div className='apartments-availability-btns'>
         {apartments
-          ? apartments.map(apartment => <button onClick={() => handleClick(apartment.id)} key={apartment.id} className='availability-btn'>{apartment.name}</button>)
+          ? apartments.map(apartment => <button onClick={() => handleClick(apartment.id)} key={apartment.id} className='availability-btn' activeClassName='active'>{apartment.name}</button>)
           : ''}
       </div>
     </div>

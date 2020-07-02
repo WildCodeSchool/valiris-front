@@ -19,7 +19,6 @@ const ApartmentDetails = (props) => {
   if (!apartment) {
     return <p>loading...</p>;
   } else {
-    console.log(i18n.language);
     return (
       <div className='details-container'>
         <h2 className='apartment-name'>{apartment.name}</h2>

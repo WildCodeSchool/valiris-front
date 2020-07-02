@@ -174,7 +174,6 @@ const Contact = () => {
       API.post('/contacts', formData)
         .then(res => res.data)
         .then(data => {
-          console.log(data);
           setFormData({
             firstname: '',
             lastname: '',
@@ -217,6 +216,7 @@ const Contact = () => {
   return (
     <div className='contact-container'>
       <h2>{t('contact-title.label')}</h2>
+      <p>Sélectionnez le sujet de votre demande ci-dessous</p>
       <Grid container spacing={2} className='toggle-form-container'>
         <Grid className='toggle-form-item'>
           <div className={classes.toggleContainer}>
@@ -376,11 +376,25 @@ const Contact = () => {
         <MapComponent />
         <div className='infos-container'>
           <ul>
-            <li>{t('contact-adress.label')} : 470 Route de Saint Didier 69760 Limonest</li>
-            <li>{t('contact-phone.label')} : XX.XX.XX.XX.XX</li>
-            <li>Email : xxxxxx@xxxxx.fr</li>
+            <li><span className='category-name'>{t('contact-adress.label')} : </span>470 Route de Saint Didier 69760 Limonest</li>
+            <hr className='separator' />
+            <li><span className='category-name'>{t('contact-phone.label')} : </span>XX.XX.XX.XX.XX</li>
+            <hr className='separator' />
+            <li><span className='category-name'>Email : </span>xxxxxx@xxxxx.fr</li>
+            <hr className='separator' />
           </ul>
-          <p>{t('contact-access.label')} : </p>
+          <div className='access'><span className='category-name'>{t('contact-access.label')} : </span>
+            <p><strong>En voiture : </strong>
+              Valiris est à 14 kms de Bellecour par Autoroute A6, sortie Limonest.
+              Compter 1/2 heure environ selon les conditions de circulation.
+            </p>
+            <p><strong>En transport en commun : </strong>
+              Métro ligne D, direction Gare de Vaise, puis bus n° 21 direction Limonest, descendre à l'arrêt "La Croix" (20 minutes).
+              Rejoindre la résidence (5 minutes à pied).
+              Consultez les horaires sur le site <a className='tcl-link' href='https://www.tcl.fr/' target='_blank' rel='noopener noreferrer'>TCL</a> ou sur l'application TCL
+            </p>
+          </div>
+
         </div>
       </div>
     </div>

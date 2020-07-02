@@ -1,10 +1,18 @@
 /*//////////////// FORM /////////////////*/
 
 .contact-container {
-  margin: 30px 50px;
+  margin: 20px 50px;
+  font-family: 'Montserrat';
+}
+
+.contact-container > p {
+  font-family: 'Montserrat';
+  text-align: center;
+  margin: 10px 0;
 }
 
 .contact-container > h2 {
+  font-family: 'Raleway';
   text-align: center;
   color: #329797;
   margin: 30px 0;
@@ -12,7 +20,7 @@
 
 .toggle-form-container {
   margin: 0 auto !important;
-  width: 60% !important;
+  width: 90% !important;
 }
 
 .toggle-form-item {
@@ -27,7 +35,11 @@
   width: 50%;
 }
 
-.btn-toggle-booking:hover,
+.btn-toggle-booking:hover {
+  box-shadow: 0px 0px 2px 1px #329797;
+}
+
+
 .Mui-selected {
   background-color: #329797 !important;
 }
@@ -90,14 +102,53 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 }
 
 .infos-container {
+  width: 100%;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.05), 0 0.2rem 0.4rem rgba(50,151,151,0.1);
+}
+
+.infos-container ul {
   padding: 20px;
 }
 
+.access {
+  padding: 0 20px;
+}
+
+.infos-container ul li,
+.access p {
+  margin: 20px auto;
+}
+
+.separator {
+  border-radius: 5px;
+  border: 0.5px solid rgba(50, 151, 151, 0.5);
+}
+
+.category-name {
+  font-family: 'Raleway';
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #329797;
+}
+
+.tcl-link {
+  text-decoration: none;
+  color: #329797;
+  font-weight: 700;
+}
+
 @media screen and (min-width: 600px) {
+
+  .toggle-form-container {
+    width: 60% !important;
+  }
 
   .input-contact {
     width: 60%;
@@ -109,6 +160,7 @@
 
   .date-input {
     margin: 10px !important;
+    width: 100%;
   }
 
   .find-us-container {
@@ -133,8 +185,12 @@
   }
 
   .find-us-container {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     flex-direction: row;
+  }
+
+  .infos-container {
+    margin: 0 20px;
   }
 }

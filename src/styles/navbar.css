@@ -10,7 +10,7 @@
     top: 0;
     width: 250px;
     height: 100%;
-    background-color: #f7f1e9ff;
+    background-color: #F5F5DC;
     z-index: 100;
     transform: translateX(105%);
     transition: transform 0.4s ease-out;
@@ -33,7 +33,7 @@
 
 .nav-menu .menuItems li a {
     text-decoration: none;
-    font-family: 'Nunito';
+    font-family: 'Raleway';
     color: #329797;
     font-weight: bold;
     font-size: 24px;
@@ -55,7 +55,7 @@
   font-size: 24px;
   border-radius: 5px; 
   text-decoration: none;
-  color: #f7f1e9ff;
+  color: #F5F5DC;
   background-color: #329797;
   width: 150px; 
   border: none;
@@ -65,7 +65,7 @@
 }
 .contact-button:hover {
   color: #329797;
-  background-color: #f7f1e9ff;
+  background-color: #F5F5DC;
   border-color: 4px #329797;
   box-shadow: 0px 0px 0px 4px #329797;
 }
@@ -78,41 +78,51 @@
 
 /*////////////////////////////////////////////////////*/
 @media screen and (min-width: 850px) {
+
     .mobile-menu {
         display: none;
     }
+
     .desktop-menu {
       display: flex;
       align-items: center;
       justify-content: center;
+      font-family: 'Raleway';
+      font-weight: 500;
     }
+    
     .desktop-menu ul {
       display: flex;
-      list-style: none;
       align-items: center;
       justify-content: center;
       height: 85px;
     }
+    
     .desktop-menu ul li {
-      padding: 0 1.5em; 
+      padding: 0 0.8em; 
     }
+
     .desktop-menu ul li:last-child {
       padding-right: 0;
     }
+
     .menu-item-desktop {
       color: #fff ;
-      font-size: 20px;
+      font-size: 18px;
       text-decoration: none;
-      transition: 0.3s ease;
+      transition: all 0.1s ease;
     }
+
     .menu-item-desktop:hover {
       border-bottom: 2px solid #f7f1e9ff;
       padding: 4px 0; 
     }
+
     .menu-item-desktop.active {
       border-bottom: 2px solid;
       padding: 4px 0; 
     }
+    
     .contact-button {
       cursor: pointer;
       font-size: 20px;
@@ -124,17 +134,23 @@
       border: none;
       padding: 0.5em;
       margin: 0;
-      transition: box-shadow 0.2s;
+      transition: box-shadow 0.4s;
     }
     .contact-button:hover {
       color: #f7f1e9ff;
       background-color: #329797;  
-      border-color: 4px #f7f1e9ff;
-      box-shadow: 0px 0px 0px 4px #f7f1e9ff;
+      border-color: 2px #f7f1e9ff;
+      box-shadow: 0px 0px 0px 3px #f7f1e9ff;
     }
     
     .contact-button:focus {
       outline: none;
       border: none;
     }
+}
+
+@media screen and (min-width: 1200px) {
+  .desktop-menu ul li {
+    padding: 0 1.5em; 
+  }
 }
