@@ -34,7 +34,7 @@ const ApartmentDetails = (props) => {
             showIndicators={false}
           >
             <div>
-              <img src={apartment.mainPictureUrl} alt='Appartement' />
+              <img src={'http://localhost:3000/' + apartment.mainPictureUrl} alt='Appartement' />
             </div>
             {apartment.url.map((url, index) => {
               return (
