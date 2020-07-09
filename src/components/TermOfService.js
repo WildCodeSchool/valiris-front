@@ -61,13 +61,14 @@ const TermOfService = () => {
         </p>
       </div>
 
-      <div id='C7Q1'><h4>Collecte des données d'identification</h4><p>
-        <b>
+      <div id='C7Q1'><h4>Collecte des données d'identification</h4>
+        <p>
+          <b>
           Utilisation de l'identifiant de l’utilisateur uniquement pour l’accès aux services
-        </b>
-        <br />
+          </b>
+          <br />
           Nous utilisons vos identifiants électroniques seulement pour et pendant l'exécution du contrat.
-                                                                   </p>
+        </p>
       </div>
 
       <div id='C9Q1'><h4>Collecte des données du terminal</h4>
@@ -109,13 +110,13 @@ const TermOfService = () => {
       <div id='C12Q1'><p>
         <b>Conservation des données pendant la durée de la relation contractuelle</b>
         <br />
-            Conformément à l'article 6-5° de la loi n°78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, les données à caractère personnel faisant l'objet d'un traitement ne sont pas conservées au-delà du temps nécessaire à l'exécution des obligations définies lors de la conclusion du contrat ou de la durée prédéfinie de la relation contractuelle.
-                      </p>
+          Conformément à l'article 6-5° de la loi n°78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, les données à caractère personnel faisant l'objet d'un traitement ne sont pas conservées au-delà du temps nécessaire à l'exécution des obligations définies lors de la conclusion du contrat ou de la durée prédéfinie de la relation contractuelle.
+      </p>
 
         <p>
         <b>Conservation des données anonymisées au delà de la relation contractuelle / après la suppression du compte</b>
         <br />
-            Nous conservons les données personnelles pour la durée strictement nécessaire à la réalisation des finalités décrites dans les présentes CGU. Au-delà de cette durée, elles seront anonymisées et conservées à des fins exclusivement statistiques et ne donneront lieu à aucune exploitation, de quelque nature que ce soit.
+        Nous conservons les données personnelles pour la durée strictement nécessaire à la réalisation des finalités décrites dans les présentes CGU. Au-delà de cette durée, elles seront anonymisées et conservées à des fins exclusivement statistiques et ne donneront lieu à aucune exploitation, de quelque nature que ce soit.
       </p>
       </div>
 
