@@ -5,7 +5,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../styles/home.css';
 
 const Home = () => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className='caroussel-container'>
@@ -34,7 +34,7 @@ const Home = () => {
         <h2 className='home-title'>{t('home-title.label')}</h2>
         <hr />
         <p className='catch-phrase'>
-        {t('home-catch-phrase.label')}
+          {t('home-catch-phrase.label')}
         </p>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../styles/detail.css';
 import { useTranslation } from 'react-i18next';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const ApartmentDetails = (props) => {
   const { i18n } = useTranslation();
@@ -17,7 +18,7 @@ const ApartmentDetails = (props) => {
   }, [i18n.language, props.match.params.id]);
 
   if (!apartment) {
-    return <p>loading...</p>;
+    return <div className='loader'><CircularProgress style={{ width: '70px', height: '70px' }} /></div>;
   } else {
     return (
       <div className='details-container'>
