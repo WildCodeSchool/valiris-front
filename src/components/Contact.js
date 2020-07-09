@@ -216,7 +216,7 @@ const Contact = () => {
   return (
     <div className='contact-container'>
       <h2>{t('contact-title.label')}</h2>
-      <p>Sélectionnez le sujet de votre demande ci-dessous</p>
+      <p>{t('page-contact-subtitle.label')}</p>
       <Grid container spacing={2} className='toggle-form-container'>
         <Grid className='toggle-form-item'>
           <div className={classes.toggleContainer}>
