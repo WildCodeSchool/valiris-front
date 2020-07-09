@@ -20,7 +20,7 @@ const LegalNotice = () => {
           <br />
           <strong>SCI </strong>au capital de 850 000€
           <br />
-          Tél  : 0000000000
+          Tél: 0000000000
         </p>
 
         <p className='legal-notice-paragraph'><strong>470 Route de Saint Didier 69760 Limonest</strong>
