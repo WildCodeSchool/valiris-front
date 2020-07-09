@@ -1,9 +1,12 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import { useTranslation } from 'react-i18next';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../styles/home.css';
 
 const Home = () => {
+  const {t} = useTranslation();
+
   return (
     <div className='caroussel-container'>
       <Carousel
@@ -28,10 +31,10 @@ const Home = () => {
         </div>
       </Carousel>
       <div className='home-content'>
-        <h2 className='home-title'>Bienvenue chez Valiris Résidence</h2>
+        <h2 className='home-title'>{t('home-title.label')}</h2>
         <hr />
         <p className='catch-phrase'>
-          Dans un cadre naturel préservé, à la naissance du vallon de Rochecardon, profitez d'un appartement 2 pièces, de 36 à 40 m², meublé, contemporain et intégralement équipé à neuf, dans un double corps de bâtiment en pierre de taille.
+        {t('home-catch-phrase.label')}
         </p>
       </div>
     </div>
