@@ -39,7 +39,7 @@ const ApartmentDetails = (props) => {
             {apartment.url.map((url, index) => {
               return (
                 <div className='secondary-picture' key={index}>
-                  <img src={url} alt='Appartment' />
+                  <img src={'http://localhost:3000/' + url} alt='Appartment' />
                 </div>
               );
             })}
