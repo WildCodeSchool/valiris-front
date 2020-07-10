@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 const ApartmentDetails = (props) => {
+  const baseURL = process.env.REACT_APP_API_BASE_URL;
   const { i18n } = useTranslation();
   const [apartment, setApartment] = useState();
 
@@ -34,12 +35,12 @@ const ApartmentDetails = (props) => {
             showIndicators={false}
           >
             <div>
-              <img src={'http://localhost:3000/' + apartment.mainPictureUrl} alt='Appartement' />
+              <img src={baseURL + '/' + apartment.mainPictureUrl} alt='Appartement' />
             </div>
             {apartment.url.map((url, index) => {
               return (
                 <div className='secondary-picture' key={index}>
-                  <img src={'http://localhost:3000/' + url} alt='Appartment' />
+                  <img src={baseURL + '/' + url} alt='Appartment' />
                 </div>
               );
             })}
