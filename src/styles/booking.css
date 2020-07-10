@@ -95,7 +95,7 @@ span.MuiIconButton-label > svg {
     box-shadow: 0px 0px 0px 2px #329797;
   }
   
-.availability-btn:focus {
+.availability-btn.active {
   outline: none;
   color: #329797;
   background-color: white;
