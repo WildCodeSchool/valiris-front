@@ -1,0 +1,20 @@
+.legal-notice-container {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.legal-notice-container div {
+    width: 100%;
+    margin: 30px;
+}
+
+.legal-notice-paragraph {
+    width: 100%;
+}
+
+.legal-notice-container div h3 {
+    margin-bottom: 20px;
+}

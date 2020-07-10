@@ -1,0 +1,17 @@
+.CGU-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    text-align: justify;
+}
+
+.CGU-container h2 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.CGU-paragraph {
+    margin: 20px 0;
+}

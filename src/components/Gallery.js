@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import GalleryItem from './GalleryItem';
 import API from '../API';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const Gallery = () => {
   const { i18n } = useTranslation();
@@ -14,11 +15,10 @@ const Gallery = () => {
   }, [i18n.language]);
 
   if (!apartments) {
-    return <p>loading...</p>;
+    return <div className='loader'><CircularProgress style={{ width: '70px', height: '70px' }} /></div>;
   } else {
     return (
       <div className='gallery-container'>
-        {console.log(apartments)}
         {apartments.map(apartment => {
           return <GalleryItem key={apartment.id} apartmentDetails={apartment} />;
         })}

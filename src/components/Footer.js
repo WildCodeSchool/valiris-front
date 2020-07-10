@@ -12,7 +12,7 @@ const Footer = () => {
     <footer>
       <nav className='nav-footer'>
         <ul className='menu-footer'>
-          <li><NavLink to='/legal-notice' className='footer-link-item'>{t('navigation-legal-notice.label')}</NavLink></li>
+          <li><NavLink to='/mentions-legales' className='footer-link-item'>{t('navigation-legal-notice.label')}</NavLink></li>
           <li><NavLink to='/CGU' className='footer-link-item'>{t('navigation-terms.label')}</NavLink></li>
           <li><NavLink to='/FAQ' className='footer-link-item'>FAQ</NavLink></li>
         </ul>

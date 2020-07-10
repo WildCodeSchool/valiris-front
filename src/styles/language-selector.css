@@ -18,6 +18,7 @@
   overflow: hidden;
   background-color: #F7F1E9;;
   border: solid 2px #F7F1E9;
+  cursor: pointer;
 }
 
 .toggle-state {
