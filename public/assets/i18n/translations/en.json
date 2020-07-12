@@ -22,6 +22,8 @@
   "form-leaving-date.label": "Leaving date",
   "form-submit.label": "Submit",
   "gallery-more-button.label": "Read more",
+  "home-catch-phrase.label": "In a preserved natural setting, at the birth of the Rochecardon valley, enjoy a 2-room apartment, 36 to 40 m², furnished, contemporary and fully equipped as new, in a double body of freestone.",
+  "home-title.label": "Welcome to Valiris Résidence",
   "navigation-about.label": "About",
   "navigation-gallery.label": "Gallery",
   "navigation-home.label": "Home",
@@ -30,7 +32,12 @@
   "navigation-terms.label": "Terms of Service",
   "page-about-h1.label": "About us",
   "page-about-h2.label": "About our project",
+  "page-about-paragraph-about.label": "This large character house, Limonois heritage, underwent a complete renovation in 2020. At the foot of the Monts d'Or, enjoying a South and West orientation, it offers an exceptional view of the Vallon de Rochecardon, the Monts du Lyonnais and the Monts du Forez in the distance. True haven of peace, its location allows you to enjoy large spaces, a clear horizon and a protected natural environment. Valiris is 25 minutes by bus from the center of Lyon. The opportunity to take advantage of your visit to visit Lyon, its museums (Confluence, Miniatures and Cinema Museum, Museum of Fine Arts, etc.) and its historic center (Vieux-Lyon, St Jean cathedral). The city is listed as World Heritage by Unesco and Oscar winner \"Best European weekend destination\" at the World Travel Awards 2016 and European Capital 2019 of Smart Tourism.",
+  "page-about-our-project.label": "A professional trip takes you around Lyon? The Business Park of Crécy, the Champagne business park at Mont d'Or and the Techlid pole are easily accessible. The quality restaurants in the area also offer you great culinary discoveries. The proximity of the village (10 minutes on foot) allows quick access to all amenities: Casino grocery store, restaurants, spa, hairdresser, ATMs. There are plenty of sports facilities within a few minutes' drive: Keep Cool, L'Appart Fitness and Block Out, to name a few, are all easily accessible. Without forgetting the multiple hiking trails nearby. The residence has parking and Internet access.",
+  "page-contact-subtitle.label": "Choose the topic of your request below",
   "page-gallery-h1.label": "Gallery",
   "page-home-h1.label": "Home",
-  "page-prices-h1.label": "Prices and availabilities"
+  "page-prices-h1.label": "Prices and availabilities",
+  "page-prices-first-subtitle.label": "Pricing details",
+  "page-prices-second-subtitle.label": "Refund details"
 }

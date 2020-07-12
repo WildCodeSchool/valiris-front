@@ -1,5 +1,6 @@
 .aboutus-container {
     font-family: 'Montserrat';
+    margin: 2em 0;
 }
 
 .first-article-aboutus, 
@@ -17,14 +18,14 @@
 .first-article-aboutus > div:nth-child(3) > p {
   width: 90%;
   margin: 0 auto;
-  text-align: center;
+  text-align: justify;
   margin-top: 50px;
   line-height: 1.6em;
 }
 
 .div-about > p {
   width: 60%;
-  text-align: center;
+  text-align: justify;
   line-height: 1.6em;
   align-self: center;
 }

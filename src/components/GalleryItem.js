@@ -62,7 +62,7 @@ const GalleryItem = ({ apartmentDetails: { id, name, title, mainPictureUrl } }) 
         <Card className='MuiEngagementCard--01'>
           <CardMedia
             className='MuiCardMedia-root'
-            image={mainPictureUrl}
+            image={'http://' + mainPictureUrl}
           />
           <CardContent className='MuiCardContent-root card-content'>
             <Typography
@@ -78,7 +78,7 @@ const GalleryItem = ({ apartmentDetails: { id, name, title, mainPictureUrl } }) 
             >
               {title}
             </Typography>
-            <Link to={`/gallerie/${id}`}><button className='read-more-button'>{t('gallery-more-button.label')}</button></Link>
+            <Link to={`/galerie/${id}`}><button className='read-more-button'>{t('gallery-more-button.label')}</button></Link>
           </CardContent>
         </Card>
       </div>
