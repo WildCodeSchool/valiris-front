@@ -14,8 +14,8 @@ const Main = () => {
     <main>
       <Switch>
         <Route exact path='/'><Home /></Route>
-        <Route exact path='/gallerie'><Gallery /></Route>
-        <Route exact path='/gallerie/:id' render={(routeProps) => <ApartmentDetails {...routeProps} />} />
+        <Route exact path='/galerie'><Gallery /></Route>
+        <Route exact path='/galerie/:id' render={(routeProps) => <ApartmentDetails {...routeProps} />} />
         <Route exact path='/a-propos'><AboutUs /></Route>
         <Route exact path='/tarifs'><Booking /></Route>
         <Route exact path='/contact'><Contact /></Route>

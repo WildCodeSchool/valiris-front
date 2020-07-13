@@ -1,9 +1,12 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import { useTranslation } from 'react-i18next';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../styles/home.css';
 
 const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <div className='caroussel-container'>
       <Carousel
@@ -27,6 +30,13 @@ const Home = () => {
           <img src='https://www.planete-deco.fr/wp-content/uploads/2020/03/TO1.jpeg' alt='caroussel 3' />
         </div>
       </Carousel>
+      <div className='home-content'>
+        <h2 className='home-title'>{t('home-title.label')}</h2>
+        <hr />
+        <p className='catch-phrase'>
+          {t('home-catch-phrase.label')}
+        </p>
+      </div>
     </div>
   );
 };

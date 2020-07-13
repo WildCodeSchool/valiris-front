@@ -1,4 +1,39 @@
-.caroussel-container{
-  margin: 0 auto;
-  max-width: 1200px;
+.home-content {
+  width: 80%;
+  margin: 4em auto;
+}
+
+.home-title {
+  top: 1.5em;
+  margin-bottom: 1em;
+  font-family: 'Raleway';
+  font-weight: 500;
+  font-size: 1.4em;
+}
+
+.catch-phrase {
+  margin: 2em auto;
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-size: 1em;
+  color: #0B1F3E
+}
+
+@media screen and (min-width: 850px) {
+  .carousel.carousel-slider {
+    max-height: 60vh;
+  }
+
+  .home-content {
+    width: 60%;
+    margin: 4em auto;
+  }
+
+  .home-title {
+    font-size: 2em;
+  }
+
+  .catch-phrase {
+    font-size: 1.4em;
+  }
 }

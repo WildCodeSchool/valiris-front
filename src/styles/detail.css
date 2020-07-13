@@ -1,0 +1,39 @@
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  margin: 2em 0;
+}
+
+.apartment-name {
+  font-weight: 700;
+  text-align: center;
+  color: #329797;
+  margin: 2em 0;
+}
+
+.thumbs {
+  text-align: center;
+}
+
+.thumb {
+  cursor: pointer;
+}
+
+.carousel .thumb.selected, .carousel .thumb:hover {
+  border: 3px solid #329797;
+}
+
+.carousel-slider{
+  margin: 0 auto !important;
+}
+
+.apartment-details {
+  width: 60%;
+  margin: 25px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0.25rem 0.25rem 0.4rem rgba(0,0,0,0.05), 0 0.25rem 1.135rem rgba(50,151,151,0.4);
+  text-align: justify;
+  line-height: 2rem;
+}

@@ -4,14 +4,27 @@
 }
 
 .App {
+  font-family: 'Montserrat';
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
+
 main {
   flex: 1 0 auto;
 }
+
 footer {
   flex-shrink: 0;
 }
 
+h1, h2, h3, h4 {
+  font-family: 'Raleway';
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
