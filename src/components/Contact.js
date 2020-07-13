@@ -228,10 +228,10 @@ const Contact = () => {
               style={{ width: '100%' }}
             >
               <ToggleButton value='info' aria-label='get-info' className='btn-toggle-booking'>
-                <p>Demande d'infos</p>
+                <p>{t('form-info-request.label')}</p>
               </ToggleButton>
               <ToggleButton value='booking' aria-label='go-booking' className='btn-toggle-booking'>
-                <p>Réservation</p>
+                <p>{t('form-booking-request.label')}</p>
               </ToggleButton>
             </ToggleButtonGroup>
           </div>
@@ -384,14 +384,11 @@ const Contact = () => {
             <hr className='separator' />
           </ul>
           <div className='access'><span className='category-name'>{t('contact-access.label')} : </span>
-            <p><strong>En voiture : </strong>
-              Valiris est à 14 kms de Bellecour par Autoroute A6, sortie Limonest.
-              Compter 1/2 heure environ selon les conditions de circulation.
+            <p><strong>{t('form-by-car.label')} </strong>
+              {t('form-by-car-text.label')}
             </p>
-            <p><strong>En transport en commun : </strong>
-              Métro ligne D, direction Gare de Vaise, puis bus n° 21 direction Limonest, descendre à l'arrêt "La Croix" (20 minutes).
-              Rejoindre la résidence (5 minutes à pied).
-              Consultez les horaires sur le site <a className='tcl-link' href='https://www.tcl.fr/' target='_blank' rel='noopener noreferrer'>TCL</a> ou sur l'application TCL
+            <p><strong>{t('form-public-transport.label')}</strong>
+              {t('form-public-transport-text1.label')} <a className='tcl-link' href='https://www.tcl.fr/' target='_blank' rel='noopener noreferrer'>TCL</a> {t('form-public-transport-text2.label')}
             </p>
           </div>
 
