@@ -15,7 +15,7 @@ const Calendar = () => {
     start: '',
     end: ''
   });
-  const [currentId, setCurrentId] = useState()
+  const [currentId, setCurrentId] = useState();
 
   useEffect(() => {
     API.get('/apartments')
@@ -61,7 +61,7 @@ const Calendar = () => {
       </div>
       <div className='apartments-availability-btns'>
         {apartments
-          ? apartments.map(apartment => <button onClick={() => handleClick(apartment.id)} key={apartment.id} className={apartment.id === currentId ? 'availability-btn active': 'availability-btn'} activeClassName='active'>{apartment.name}</button>)
+          ? apartments.map(apartment => <button onClick={() => handleClick(apartment.id)} key={apartment.id} className={apartment.id === currentId ? 'availability-btn active' : 'availability-btn'} activeClassName='active'>{apartment.name}</button>)
           : ''}
       </div>
     </div>
