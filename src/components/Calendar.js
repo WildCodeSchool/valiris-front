@@ -7,7 +7,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import API from '../API';
 
 const Calendar = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [apartments, setApartments] = useState();
   const [availabilities, setAvailabilities] = useState({
     id: '',
@@ -56,8 +56,8 @@ const Calendar = () => {
         height='auto'
       />
       <div className='legend-container'>
-        <span className='avalaible'>Disponible</span>
-        <span className='rent'>Loué</span>
+        <span className='avalaible'>{t('calendar-available.label')}</span>
+        <span className='rent'>{t('calendar-rent.label')}</span>
       </div>
       <div className='apartments-availability-btns'>
         {apartments
