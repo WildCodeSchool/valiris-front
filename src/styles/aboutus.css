@@ -20,6 +20,7 @@
   margin: 0 auto;
   text-align: justify;
   margin-top: 50px;
+  margin-bottom: 30px;
   line-height: 1.6em;
 }
 
@@ -39,6 +40,26 @@
 .aboutus-image {
   width: 30%;
   height: 30%;
+  align-self: center;
+  min-width: 250px;
+  border-radius: 2px;
+  box-shadow: 3px 2px 2px #329797;
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+
+.aboutus-image:hover {
+  box-shadow: 10px 4px 4px #329797;
+  -webkit-transform: scale(1.03);
+	transform: scale(1.03);
+}
+
+.img-4 {
+  width: 30%;
+  height: 100%;
+  max-width: 200px;
   align-self: center;
   min-width: 250px;
   border-radius: 2px;

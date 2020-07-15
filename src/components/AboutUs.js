@@ -19,10 +19,12 @@ const AboutUs = () => {
       </article>
 
       <article className='second-article-aboutus'>
-        <h2>{t('page-about-h2.label')}</h2>
         <div className='div-about'>
-          <img className='aboutus-image' alt='img-4' src='https://cdn.pixabay.com/photo/2015/10/05/01/20/path-972128_960_720.jpg' />
-          <p>{t('page-about-our-project.label')}</p>
+          <img className='aboutus-image img-4' alt='img-4' src='https://cdn.pixabay.com/photo/2015/10/05/01/20/path-972128_960_720.jpg' />
+          <p>
+            <h2>{t('page-about-h2.label')}</h2>
+            {t('page-about-our-project.label')}
+          </p>
         </div>
       </article>
 
