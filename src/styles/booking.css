@@ -23,6 +23,16 @@
   box-shadow: 3px 2px 2px #329797;
   width: 85%;
   height: 100%;
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+
+.img-infos:hover {
+  box-shadow: 10px 4px 4px #329797;
+  -webkit-transform: scale(1.03);
+	transform: scale(1.03);
 }
 
 .title-dropdown {
@@ -46,7 +56,11 @@ span.MuiIconButton-label > svg {
   margin: 10px;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.05), 0 0.2rem 0.4rem rgba(50,151,151,0.1);
+  box-shadow: 0.1rem 0.1rem 0.2rem rgba(50,151,151,0.5);
+}
+
+.infos-text li:hover {
+  box-shadow: 0.1rem 0.1rem 0.2rem rgba(50,151,151,1);
 }
 
 .booking-calendar {

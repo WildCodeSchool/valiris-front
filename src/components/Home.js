@@ -31,7 +31,10 @@ const Home = () => {
         </div>
       </Carousel>
       <div className='home-content'>
-        <h2 className='home-title'>{t('home-title.label')}</h2>
+        <h2 className='home-title animate four'>
+          <span>V</span><span>a</span><span>l</span><span>i</span><span>r</span><span>i</span><span>s</span>&nbsp;
+          <span>R</span><span>é</span><span>s</span><span>i</span><span>d</span><span>e</span><span>n</span><span>c</span><span>e</span>
+        </h2>
         <hr />
         <p className='catch-phrase'>
           {t('home-catch-phrase.label')}
