@@ -24,7 +24,7 @@ const AboutUs = () => {
           <div>
             <h2>{t('page-about-h2.label')}</h2>
             <p>
-            {t('page-about-our-project.label')}
+              {t('page-about-our-project.label')}
             </p>
           </div>
         </div>
