@@ -27,11 +27,11 @@ const Booking = () => {
             <ExpansionPanelDetails>
               <Typography>
                 <ul className='infos-text'>
-                  <li>Tarif toutes charges comprises (Eau, Electricité, chauffage, accès internet wifi, assurance occupant).</li>
-                  <li><strong>À la semaine</strong> à partir de 480 €.</li>
-                  <li><strong>Au mois</strong>, à partir de 790 €.</li>
-                  <li>Acompte à la réservation de 1/3 par virement, le solde à l'arrivée par CB.</li>
-                  <li>Caution de garantie de 500 € par CB à l'arrivée, non prélevée.</li>
+                  <li>{t('page-prices-line-1.label')}</li>
+                  <li><strong>{t('page-prices-line-2-strong.label')}</strong>{t('page-prices-line-2.label')}</li>
+                  <li><strong>{t('page-prices-line-3-strong.label')}</strong>{t('page-prices-line-3.label')}</li>
+                  <li>{t('page-prices-line-4.label')}</li>
+                  <li>{t('page-prices-line-5.label')}</li>
                 </ul>
               </Typography>
             </ExpansionPanelDetails>
@@ -48,9 +48,9 @@ const Booking = () => {
             <ExpansionPanelDetails>
               <Typography>
                 <ul className='infos-text'>
-                  <li>Remboursement de l'acompte si annulation au moins 14 jours avant la date prévue d'arrivée.</li>
-                  <li>Remboursement à 50% de l'acompte si annulation au moins 4 jours avant la date prévus d'arrivée.</li>
-                  <li>Pas de remboursement si annulation à moins de 4 jours de la date prévue d'arrivée.</li>
+                  <li>{t('page-prices-line-6.label')}</li>
+                  <li>{t('page-prices-line-7.label')}</li>
+                  <li>{t('page-prices-line-8.label')}</li>
                 </ul>
               </Typography>
             </ExpansionPanelDetails>

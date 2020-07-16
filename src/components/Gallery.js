@@ -3,9 +3,10 @@ import { useTranslation } from 'react-i18next';
 import GalleryItem from './GalleryItem';
 import API from '../API';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import '../styles/gallery.css';
 
 const Gallery = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [apartments, setApartments] = useState();
 
   useEffect(() => {
@@ -18,11 +19,15 @@ const Gallery = () => {
     return <div className='loader'><CircularProgress style={{ width: '70px', height: '70px' }} /></div>;
   } else {
     return (
-      <div className='gallery-container'>
-        {apartments.map(apartment => {
-          return <GalleryItem key={apartment.id} apartmentDetails={apartment} />;
-        })}
-      </div>
+      <>
+        <h2 id='main-title-gallery'>{t('page.gallery-h2.label')}</h2>
+        <h4 id='subtitle-gallery'>{t('page.gallery-catchphrase.label')}</h4>
+        <div className='gallery-container'>
+          {apartments.map(apartment => {
+            return <GalleryItem key={apartment.id} apartmentDetails={apartment} />;
+          })}
+        </div>
+      </>
     );
   }
 };
