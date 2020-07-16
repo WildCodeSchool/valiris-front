@@ -37,6 +37,12 @@
   justify-content: space-around;
 }
 
+article.second-article-aboutus > div > div > p {
+  margin: 40px;
+  text-align: justify;
+  line-height: 1.6em;
+}
+
 .aboutus-image {
   width: 30%;
   height: 30%;
@@ -84,6 +90,11 @@
     font-size: 14px;
   }
 
+  article.second-article-aboutus > div > div > p {
+    margin: 30px;
+    font-size: 14px;
+  }
+
   .div-about > p {
     width: 90%;
     font-size: 14px;
@@ -93,7 +104,11 @@
 @media screen and (max-width: 480px) {
 
   .first-article-aboutus > div:nth-child(3) > p,
-  .div-about > p {
+  article.second-article-aboutus > div > div > p {
     font-size: 12px;
+  }
+
+  article.second-article-aboutus > div > div > p {
+    margin: 20px;
   }
 }
