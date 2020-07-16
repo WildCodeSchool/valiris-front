@@ -10,7 +10,8 @@
     top: 0;
     width: 250px;
     height: 100%;
-    background-color: #F5F5DC;
+    background-color: #fff;
+    border-left: 1px solid #329797;
     z-index: 100;
     transform: translateX(105%);
     transition: transform 0.4s ease-out;
@@ -28,7 +29,7 @@
 }
 
 .nav-menu ul li {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .nav-menu .menuItems li a {
@@ -36,7 +37,7 @@
     font-family: 'Raleway';
     color: #329797;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .closing-menu {
@@ -55,17 +56,17 @@
   font-size: 24px;
   border-radius: 5px; 
   text-decoration: none;
-  color: #F5F5DC;
+  color: #f7f1e9ff;
   background-color: #329797;
   width: 150px; 
   border: none;
   padding: 0.5em;
-  margin-top: 1em;
+  margin-top: 30px;
   transition: box-shadow 0.2s;
 }
 .contact-button:hover {
   color: #329797;
-  background-color: #F5F5DC;
+  background-color: #f7f1e9ff;
   border-color: 4px #329797;
   box-shadow: 0px 0px 0px 4px #329797;
 }

@@ -37,3 +37,7 @@
   text-align: justify;
   line-height: 2rem;
 }
+
+.apartment-details:hover {
+  box-shadow: 1px 1px 1px 1px #329797;
+}
