@@ -169,7 +169,22 @@ const Contact = () => {
     e.preventDefault();
     submitValidation();
     setErrorForm(false);
-    if (Object.values(errorInput).filter(e => e).length === 0) {
+    if (!formData.apartment) {
+      setMessageForm(true);
+      setErrorForm(true);
+      setLoading(false);
+      setMsgAlert(t('form-apartment-error.label'));
+    } else if (!formData.startDate || !formData.endDate) {
+      setMessageForm(true);
+      setErrorForm(true);
+      setLoading(false);
+      setMsgAlert(t('form-date-error.label'));
+    } else if (formData.endDate <= formData.startDate) {
+      setMessageForm(true);
+      setErrorForm(true);
+      setLoading(false);
+      setMsgAlert(t('form-valid-date-error.label'));
+    } else if (Object.values(errorInput).filter(e => e).length === 0) {
       setLoading(true);
       API.post('/contacts', formData)
         .then(res => res.data)
