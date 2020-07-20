@@ -187,7 +187,7 @@ const Contact = () => {
     } else if (Object.values(errorInput).filter(e => e).length === 0) {
       setLoading(true);
       const apartmentName = apartments.find(apartment => parseInt(formData.apartment) === apartment.id).name;
-      API.post('/contacts', {...formData, apartmentName})
+      API.post('/contacts', { ...formData, apartmentName })
         .then(res => res.data)
         .then(data => {
           setFormData({
