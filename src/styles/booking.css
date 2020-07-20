@@ -1,5 +1,5 @@
 .booking-container {
-  width: 80%;
+  width: 95%;
   margin: 2em auto;
 }
 
@@ -45,16 +45,15 @@ span.MuiIconButton-label > svg {
 }
 
 .infos-text {
-  margin: 30px 20px;
   font-family: 'Montserrat';
   font-size: 0.9em;
   line-height: 1.4em;
-  text-align: justify;
+  font-size: 13px;
 }
 
 .infos-text li {
-  margin: 10px;
-  padding: 15px;
+  margin: 5px;
+  padding: 5px;
   border-radius: 10px;
   box-shadow: 0.1rem 0.1rem 0.2rem rgba(50,151,151,0.5);
 }
@@ -64,7 +63,7 @@ span.MuiIconButton-label > svg {
 }
 
 .booking-calendar {
-    width: 80% !important;
+    width: 100% !important;
     margin: 40px auto;
     color: #329797 !important;
 }
@@ -149,6 +148,9 @@ span.MuiIconButton-label > svg {
 }
 
 @media screen and (min-width: 600px) {
+  .booking-container {
+    width: 80%;
+  }
   .img-infos {
     width: 70%;
   }
@@ -158,6 +160,18 @@ span.MuiIconButton-label > svg {
     align-items: center;
     flex-direction: column;
   }
+  .infos-text {
+    margin: 30px 20px;
+    text-align: justify;
+    font-size: 14px;
+  }
+  .infos-text li {
+    margin: 10px;
+    padding: 15px;
+  }
+  .booking-calendar {
+    width: 80% !important;
+}
 }
 
 @media screen and (min-width: 1200px) {

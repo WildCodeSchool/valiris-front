@@ -169,9 +169,25 @@ const Contact = () => {
     e.preventDefault();
     submitValidation();
     setErrorForm(false);
-    if (Object.values(errorInput).filter(e => e).length === 0) {
+    if (!formData.apartment) {
+      setMessageForm(true);
+      setErrorForm(true);
+      setLoading(false);
+      setMsgAlert(t('form-apartment-error.label'));
+    } else if (!formData.startDate || !formData.endDate) {
+      setMessageForm(true);
+      setErrorForm(true);
+      setLoading(false);
+      setMsgAlert(t('form-date-error.label'));
+    } else if (formData.endDate <= formData.startDate) {
+      setMessageForm(true);
+      setErrorForm(true);
+      setLoading(false);
+      setMsgAlert(t('form-invalid-date-error.label'));
+    } else if (Object.values(errorInput).filter(e => e).length === 0) {
       setLoading(true);
-      API.post('/contacts', formData)
+      const apartmentName = apartments.find(apartment => parseInt(formData.apartment) === apartment.id).name;
+      API.post('/contacts', { ...formData, apartmentName })
         .then(res => res.data)
         .then(data => {
           setFormData({
@@ -186,17 +202,17 @@ const Contact = () => {
           });
           setMessageForm(true);
           setLoading(false);
-          setMsgAlert('Votre message a bien été envoyé et sera traité dans les meilleurs délais');
+          setMsgAlert(t('form-valid-submition.label'));
         })
         .catch(error => {
           console.error(error);
-          setMsgAlert('Une erreur est survenue, veuillez essayer à nouveau');
+          setMsgAlert(t('form-invalid-submition.label'));
           setErrorForm(true);
           setLoading(false);
           setMessageForm(true);
         });
     } else {
-      setMsgAlert('Merci de bien renseigner l\'ensemble des champs requis.');
+      setMsgAlert(t('form-required-error.label'));
       setMessageForm(true);
       setErrorForm(true);
     }
