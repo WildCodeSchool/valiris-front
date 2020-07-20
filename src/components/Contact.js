@@ -183,7 +183,7 @@ const Contact = () => {
       setMessageForm(true);
       setErrorForm(true);
       setLoading(false);
-      setMsgAlert(t('form-valid-date-error.label'));
+      setMsgAlert(t('form-invalid-date-error.label'));
     } else if (Object.values(errorInput).filter(e => e).length === 0) {
       setLoading(true);
       API.post('/contacts', formData)
@@ -201,17 +201,17 @@ const Contact = () => {
           });
           setMessageForm(true);
           setLoading(false);
-          setMsgAlert('Votre message a bien été envoyé et sera traité dans les meilleurs délais');
+          setMsgAlert(t('form-valid-submition.label'));
         })
         .catch(error => {
           console.error(error);
-          setMsgAlert('Une erreur est survenue, veuillez essayer à nouveau');
+          setMsgAlert(t('form-invalid-submition.label'));
           setErrorForm(true);
           setLoading(false);
           setMessageForm(true);
         });
     } else {
-      setMsgAlert('Merci de bien renseigner l\'ensemble des champs requis.');
+      setMsgAlert(t('form-required-error.label'));
       setMessageForm(true);
       setErrorForm(true);
     }
