@@ -78,7 +78,7 @@ const Contact = () => {
   const handleAlignment = (event, newAlignment) => {
     if (newAlignment !== null) {
       setAlignment(newAlignment);
-      setFormData({...formData, startDate: '', endDate: '', apartment: ''})
+      setFormData({ ...formData, startDate: '', endDate: '', apartment: '' });
     }
   };
 
@@ -171,10 +171,10 @@ const Contact = () => {
     e.preventDefault();
     submitValidation();
     setErrorForm(false);
-    if (alignment ==='booking' && formData.apartment) {
+    if (alignment === 'booking' && formData.apartment) {
       const apartmentName = apartments.find(apartment => parseInt(formData.apartment) === apartment.id).name;
-      data = {...formData, apartmentName}
-    } 
+      data = { ...formData, apartmentName };
+    }
     if (alignment === 'booking' && !formData.apartment) {
       setMessageForm(true);
       setErrorForm(true);
