@@ -78,6 +78,7 @@ const Contact = () => {
   const handleAlignment = (event, newAlignment) => {
     if (newAlignment !== null) {
       setAlignment(newAlignment);
+      setFormData({...formData, startDate: '', endDate: '', apartment: ''})
     }
   };
 
@@ -166,28 +167,32 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
+    let data = formData;
     e.preventDefault();
     submitValidation();
     setErrorForm(false);
-    if (!formData.apartment) {
+    if (alignment ==='booking' && formData.apartment) {
+      const apartmentName = apartments.find(apartment => parseInt(formData.apartment) === apartment.id).name;
+      data = {...formData, apartmentName}
+    } 
+    if (alignment === 'booking' && !formData.apartment) {
       setMessageForm(true);
       setErrorForm(true);
       setLoading(false);
       setMsgAlert(t('form-apartment-error.label'));
-    } else if (!formData.startDate || !formData.endDate) {
+    } else if (alignment === 'booking' && (!formData.startDate || !formData.endDate)) {
       setMessageForm(true);
       setErrorForm(true);
       setLoading(false);
       setMsgAlert(t('form-date-error.label'));
-    } else if (formData.endDate <= formData.startDate) {
+    } else if (alignment === 'booking' && (formData.endDate <= formData.startDate)) {
       setMessageForm(true);
       setErrorForm(true);
       setLoading(false);
       setMsgAlert(t('form-invalid-date-error.label'));
     } else if (Object.values(errorInput).filter(e => e).length === 0) {
       setLoading(true);
-      const apartmentName = apartments.find(apartment => parseInt(formData.apartment) === apartment.id).name;
-      API.post('/contacts', { ...formData, apartmentName })
+      API.post('/contacts', data)
         .then(res => res.data)
         .then(data => {
           setFormData({
