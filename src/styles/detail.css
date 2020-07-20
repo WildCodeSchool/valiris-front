@@ -29,15 +29,26 @@
 }
 
 .apartment-details {
-  width: 60%;
+  width: 80%;
   margin: 25px auto;
-  padding: 30px;
+  padding: 15px;
   border-radius: 10px;
   box-shadow: 0.25rem 0.25rem 0.4rem rgba(0,0,0,0.05), 0 0.25rem 1.135rem rgba(50,151,151,0.4);
-  text-align: justify;
-  line-height: 2rem;
+  text-align: center;
+  line-height: 1.5rem;
+  font-size: 12px;
 }
 
 .apartment-details:hover {
   box-shadow: 1px 1px 1px 1px #329797;
+}
+
+@media screen and (min-width: 600px) {
+  .apartment-details {
+    width: 60%;
+    padding: 30px;
+    text-align: justify;
+    font-size: 16px;
+    line-height: 2rem;
+  }
 }

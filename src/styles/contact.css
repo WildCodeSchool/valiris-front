@@ -1,7 +1,7 @@
 /*//////////////// FORM /////////////////*/
 
 .contact-container {
-  margin: 40px 50px;
+  margin: 20px 10px;
   font-family: 'Montserrat';
 }
 
@@ -99,11 +99,12 @@
 /*//////////////// Localisation /////////////////*/
 
 .find-us-container {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: auto;
 }
 
 .infos-container {
@@ -145,6 +146,11 @@
 }
 
 @media screen and (min-width: 600px) {
+
+  .contact-container {
+    margin: 40px 50px;
+    font-family: 'Montserrat';
+  }
 
   .toggle-form-container {
     width: 60% !important;

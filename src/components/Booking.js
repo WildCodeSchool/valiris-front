@@ -16,7 +16,7 @@ const Booking = () => {
       <article className='booking-infos'>
         <img className='img-infos' src='https://odis.homeaway.com/odis/listing/3127bdcb-71a6-49e8-b9bd-6050846f9c5c.f6.jpg' alt='maison en pierre' />
         <div className='infos-card'>
-          <ExpansionPanel style={{ width: '70%', margin: '20px auto' }}>
+          <ExpansionPanel style={{ width: '100%', margin: '20px auto' }}>
             <ExpansionPanelSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls='panel1a-content'
@@ -37,7 +37,7 @@ const Booking = () => {
             </ExpansionPanelDetails>
           </ExpansionPanel>
 
-          <ExpansionPanel style={{ width: '70%', margin: '20px auto' }}>
+          <ExpansionPanel style={{ width: '100%', margin: '20px auto' }}>
             <ExpansionPanelSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls='panel1a-content'
