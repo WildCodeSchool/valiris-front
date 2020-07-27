@@ -19,10 +19,10 @@ const Navbar = ({ show, handleOpen, handleClose }) => {
           <i className='fas fa-times' onClick={handleClose} />
         </div>
         <ul className='menuItems'>
-          <li><NavLink onClick={handleClose} to='/'>{t('navigation-home.label')}</NavLink></li>
-          <li><NavLink onClick={handleClose} to='/galerie'>{t('navigation-gallery.label')}</NavLink></li>
-          <li><NavLink onClick={handleClose} to='/a-propos'>{t('navigation-about.label')}</NavLink></li>
-          <li><NavLink onClick={handleClose} to='/tarifs'>{t('navigation-prices.label')}</NavLink></li>
+          <li><NavLink onClick={handleClose} className='menu-item-mobile' exact activeClassName='active' to='/'>{t('navigation-home.label')}</NavLink></li>
+          <li><NavLink onClick={handleClose} className='menu-item-mobile' activeClassName='active' to='/galerie'>{t('navigation-gallery.label')}</NavLink></li>
+          <li><NavLink onClick={handleClose} className='menu-item-mobile' activeClassName='active' to='/a-propos'>{t('navigation-about.label')}</NavLink></li>
+          <li><NavLink onClick={handleClose} className='menu-item-mobile' activeClassName='active' to='/tarifs'>{t('navigation-prices.label')}</NavLink></li>
           <NavLink onClick={handleClose} to='/contact'><button className='contact-button'>Contact</button></NavLink>
         </ul>
       </nav>

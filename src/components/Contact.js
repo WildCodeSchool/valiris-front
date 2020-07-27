@@ -399,7 +399,7 @@ const Contact = () => {
           <ul>
             <li><span className='category-name'>{t('contact-adress.label')} : </span>470 Route de Saint Didier 69760 Limonest</li>
             <hr className='separator' />
-            <li><span className='category-name'>{t('contact-phone.label')} : </span>06.00.00.00.00</li>
+            <li><span className='category-name'>{t('contact-phone.label')} : </span>06.45.23.33.64</li>
             <hr className='separator' />
             <li><span className='category-name'>Email : </span>valiris@résidence.fr</li>
             <hr className='separator' />
