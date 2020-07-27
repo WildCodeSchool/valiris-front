@@ -40,6 +40,16 @@
     font-size: 18px;
 }
 
+.menu-item-mobile:hover {
+  border-bottom: 2px solid #329797;
+  padding: 4px 0; 
+}
+
+.menu-item-mobile.active {
+  border-bottom: 2px solid;
+  padding: 4px 0; 
+}
+
 .closing-menu {
     cursor: pointer;
     position: absolute;
