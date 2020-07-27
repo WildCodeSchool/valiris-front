@@ -25,7 +25,7 @@ const Booking = () => {
               <Typography className='title-dropdown'>{t('page-prices-first-subtitle.label')}</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
-              <Typography>
+              <div>
                 <ul className='infos-text'>
                   <li>{t('page-prices-line-1.label')}</li>
                   <li><strong>{t('page-prices-line-2-strong.label')}</strong>{t('page-prices-line-2.label')}</li>
@@ -33,7 +33,7 @@ const Booking = () => {
                   <li>{t('page-prices-line-4.label')}</li>
                   <li>{t('page-prices-line-5.label')}</li>
                 </ul>
-              </Typography>
+              </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
 
@@ -46,13 +46,13 @@ const Booking = () => {
               <Typography className='title-dropdown'>{t('page-prices-second-subtitle.label')}</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
-              <Typography>
+              <div>
                 <ul className='infos-text'>
                   <li>{t('page-prices-line-6.label')}</li>
                   <li>{t('page-prices-line-7.label')}</li>
                   <li>{t('page-prices-line-8.label')}</li>
                 </ul>
-              </Typography>
+              </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
         </div>

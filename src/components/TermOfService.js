@@ -36,14 +36,14 @@ const TermOfService = () => {
 
       <div>
         <h3>Information de l'Utilisateur en cas de faille de sécurité</h3>
-        <p className='CGU-paragraph'>
+        <div className='CGU-paragraph'>
           Nous nous engageons à mettre en oeuvre toutes les mesures techniques et organisationnelles appropriées afin de garantir un niveau de sécurité adapté au regard des risques d'accès accidentels, non autorisés ou illégaux, de divulgation, d'altération, de perte ou encore de destruction des données personnelles vous concernant. Dans l'éventualité où nous prendrions connaissance d'un accès illégal aux données personnelles vous concernant stockées sur nos serveurs ou ceux de nos prestataires, ou d'un accès non autorisé ayant pour conséquence la réalisation des risques identifiés ci-dessus, nous nous engageons à :
           <ul>
             <li>Vous notifier l'incident dans les plus brefs délais ;</li>
             <li>Examiner les causes de l'incident et vous en informer ;</li>
             <li>Prendre les mesures nécessaires dans la limite du raisonnable afin d'amoindrir les effets négatifs et préjudices pouvant résulter dudit incident</li>
           </ul>
-        </p>
+        </div>
 
         <h3>Limitation de la responsabilité</h3>
         <p className='CGU-paragraph'>
