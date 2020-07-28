@@ -1,79 +1,69 @@
-![logo](src/images/logo_valiris.png)
-# Valiris Résidence
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](http://forthebadge.com) 
+## Available Scripts
 
+In the project directory, you can run:
 
-Ce projet concerne la conception d’une application web qui a pour objectif de présenter des biens immobiliers au grand public et de permettre la prise de contact (dans l’optique d’une location courte ou longue durée). 
-Le projet est composé d'une interface utilisateur ([front-office](https://github.com/WildCodeSchool/valiris-front)), un espace d'administration ([back-office](https://github.com/WildCodeSchool/valiris-back)) et d'une base de données ([API](https://github.com/WildCodeSchool/valiris-api)).
+### `npm start`
 
-# Modules utilisés et implémentation
-## Front-office
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-#### Traduction
-Utilisation du plugin i18n pour gérer le multilingue. Les traductions sont stockés dans deux fichiers JSON.
-[Documentation officielle](https://www.i18next.com/overview/getting-started)
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-### Calendrier
-Utilisation d'un calendrier interactif pour l'affichage de la disponibilité de chaque appartement. Un composant Calendar.js est disponible en front-office.
-[Documentation officielle](https://fullcalendar.io/docs/getting-started)
+### `npm test`
 
-### Material UI
-Utilisation du framework UI React Material UI pour quelques composants: Buttons, TextFields, Cards, Loader...
-[Documentation officielle](https://material-ui.com/getting-started/installation/)
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Carousel d'images
-Utilisations d'un carousel d'images pour l'affichage de photos d'appartements en page d'accueil grâce au module React Responive Carousel.
-[Documentation officielle](https://react-responsive-carousel.js.org/)
+### `npm run build`
 
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Back-office
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-Back-office développé avec l'aide de Material-UI.
-[Documentation officielle](https://material-ui.com/getting-started/installation/)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## API
+### `npm run eject`
 
-#### Gestion des emails
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Utilisation de la librairie Nodemailer.
-[Documentation officielle](https://nodemailer.com/about/)
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-Se rendre dans le fichier services/mailer.js.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-Le premier email est déstiné au client et le deuxième à l'admin.
+## Learn More
 
-Il prend en compte la langue actuelle du site pour le mail ultilisateur.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Modification du contenu des emails : 
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-  * Phrase d'intro : de la ligne 120 à 123 et à la ligne 368
-  
-  * Liste récapitulative : de la ligne 180 à 192 et de la ligne 423 à 427
+### Code Splitting
 
-  * Liens Facebook et youtube : ligne 130/231 et ligne 462/463
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-Gestion de l'envoi d'email de la ligne 482 à 518.
+### Analyzing the Bundle Size
 
-*exemple:*
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-```javascript
-      const mailOptionsUser = {
-      from: `"Valiris Résidence" <${process.env.MAIL_USER}>`,
-      to: body.email,
-      subject: `Valiris Résidence - ${lang === 'en' ? 'Summary of your request' : 'Récapitulatif de votre demande'}`,
-      html: outputUser
-    };
-```
+### Making a Progressive Web App
 
-## Fabriqué avec
-* [React.js](https://fr.reactjs.org/) - Bibliothèque JavaScript (front-end)
-* [Node.js](https://nodejs.org/fr/) - Environnement d'exécution JavaScript (back-end)
-* [Express](https://expressjs.com/fr/) - Infrastructure d'applications web Node.js (back-end)
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-## Auteurs
+### Advanced Configuration
 
-* **Vianney** _alias_ [@vboualt](https://github.com/vbouault)
-* **Nathan** _alias_ [@nathanguillaumin](https://github.com/nathanguillaumin)
-* **Hugo** _alias_ [@K0Si-003](https://github.com/K0Si-003)
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
